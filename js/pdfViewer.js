@@ -1,18 +1,6 @@
 // URL of your PDF file
 var pdfUrl = "assets/resources/MANUAL V7.pdf";
 
-// JavaScript code for the download button
-document.getElementById("view-button").addEventListener("click", function () {
-  // Create a temporary anchor element, set its properties and trigger a click
-  var downloadLink = document.createElement("a");
-  downloadLink.href = pdfUrl;
-  downloadLink.download = "MANUAL V7.pdf";
-  downloadLink.click();
-
-  // Remove the anchor element after the download is complete
-  downloadLink.remove();
-});
-
 // JavaScript code for the preview button
 document.getElementById("view-button").addEventListener("click", function () {
   // Open the PDF in a new tab or window
