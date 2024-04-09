@@ -3583,6 +3583,7 @@ textarea.form-control-lg {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  
 }
 
 .nav-link {
@@ -3665,6 +3666,9 @@ textarea.form-control-lg {
 .nav-fill .nav-item {
   flex: 1 1 auto;
   text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
 }
 
 .nav-justified > .nav-link,
@@ -3713,6 +3717,10 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: space-between;
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  
 }
 .navbar > .container,
 .navbar > .container-fluid,
@@ -3725,6 +3733,7 @@ textarea.form-control-lg {
   flex-wrap: inherit;
   align-items: center;
   justify-content: space-between;
+  border-radius: 8px;
 }
 .navbar-brand {
   padding-top: var(--bs-navbar-brand-padding-y);
@@ -3733,6 +3742,9 @@ textarea.form-control-lg {
   font-size: var(--bs-navbar-brand-font-size);
   color: var(--bs-navbar-brand-color);
   white-space: nowrap;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
 }
 .navbar-brand:hover, .navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);
@@ -3750,6 +3762,9 @@ textarea.form-control-lg {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
 }
 .navbar-nav .show > .nav-link,
 .navbar-nav .nav-link.active {
@@ -3768,6 +3783,9 @@ textarea.form-control-lg {
 .navbar-text a:hover,
 .navbar-text a:focus {
   color: var(--bs-navbar-active-color);
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
 }
 
 .navbar-collapse {
@@ -11092,6 +11110,18 @@ ul.list-unstyled {
 
 ul.list-unstyled li {
   margin-bottom: 10px;
+}
+
+@media (max-width: 560px) {
+  .video {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .video {
+    width: 560px;
+  }
 }
 
 
