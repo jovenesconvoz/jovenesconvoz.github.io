@@ -460,10 +460,18 @@
             "onAccept": function() {
                 // Imposta il cookie delle preferenze per indicare che l'utente ha accettato
                 setCookie('cookie_consent', 'true', 365); // Imposta il cookie per un anno
+                
+                // Verifica che il cookie sia impostato correttamente
+                var consentCookie = getCookie('cookie_consent');
+                console.log('Cookie impostato su: ' + consentCookie);
             },
             "onReject": function() {
                 // Imposta il cookie delle preferenze per indicare che l'utente ha rifiutato
                 setCookie('cookie_consent', 'false', 365); // Imposta il cookie per un anno
+                
+                // Verifica che il cookie sia impostato correttamente
+                var consentCookie = getCookie('cookie_consent');
+                console.log('Cookie impostato su: ' + consentCookie);
             }
         }
     };
@@ -477,6 +485,18 @@
             expires = "; expires=" + date.toUTCString();
         }
         document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+    
+    // Funzione per ottenere il valore di un cookie
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
     }
 </script>
 <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
