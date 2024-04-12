@@ -16,7 +16,13 @@
   <!-- Stylesheet -->
   <link href="css/styles.css" rel="stylesheet" />
 
-  
+  <script type="text/javascript">
+    var _iub = _iub || [];
+    _iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"enableFadp":true,"enableLgpd":true,"enableUspr":true,"fadpApplies":true,"floatingPreferencesButtonDisplay":"anchored-center-left","lang":"es","perPurposeConsent":true,"siteId":3592554,"usprApplies":true,"whitelabel":false,"cookiePolicyId":81824246, "banner":{ "acceptButtonDisplay":true,"backgroundOverlay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"bottom","rejectButtonDisplay":true,"showPurposesToggles":true,"showTitle":false }};
+    </script>
+    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -431,77 +437,6 @@
   
 
 
-  <script type="text/javascript">
-    var _iub = _iub || [];
-    _iub.csConfiguration = {
-        "askConsentAtCookiePolicyUpdate": true,
-        "enableFadp": true,
-        "enableLgpd": true,
-        "enableUspr": true,
-        "fadpApplies": true,
-        "floatingPreferencesButtonDisplay": "anchored-center-left",
-        "lang": "es",
-        "perPurposeConsent": true,
-        "siteId": 3592554,
-        "usprApplies": true,
-        "whitelabel": false,
-        "cookiePolicyId": 81824246,
-        "banner": {
-            "acceptButtonDisplay": true,
-            "backgroundOverlay": true,
-            "closeButtonDisplay": false,
-            "customizeButtonDisplay": true,
-            "explicitWithdrawal": true,
-            "listPurposes": true,
-            "position": "bottom",
-            "rejectButtonDisplay": true,
-            "showPurposesToggles": true,
-            "showTitle": false,
-            "onAccept": function() {
-                // Imposta il cookie delle preferenze per indicare che l'utente ha accettato
-                setCookie('cookie_consent', 'true', 365); // Imposta il cookie per un anno
-                
-                // Verifica che il cookie sia impostato correttamente
-                var consentCookie = getCookie('cookie_consent');
-                console.log('Cookie impostato su: ' + consentCookie);
-            },
-            "onReject": function() {
-                // Imposta il cookie delle preferenze per indicare che l'utente ha rifiutato
-                setCookie('cookie_consent', 'false', 365); // Imposta il cookie per un anno
-                
-                // Verifica che il cookie sia impostato correttamente
-                var consentCookie = getCookie('cookie_consent');
-                console.log('Cookie impostato su: ' + consentCookie);
-            }
-        }
-    };
-
-    // Funzione per impostare un cookie
-    function setCookie(name, value, days) {
-        var expires = "";
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            expires = "; expires=" + date.toUTCString();
-        }
-        document.cookie = name + "=" + (value || "") + expires + "; path=/";
-    }
-    
-    // Funzione per ottenere il valore di un cookie
-    function getCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-        }
-        return null;
-    }
-</script>
-<script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 
   <!-- Bootstrap core JS-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
