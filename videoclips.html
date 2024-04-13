@@ -51,6 +51,7 @@
             },
             onConsentGiven: function () {
                 console.log("User has given consent");
+                localStorage.setItem('cookieConsentGiven', 'true');
             },
             onConsentFirstGiven: function (actionTaken) {
                 console.log("First consent given with action: " + actionTaken);
@@ -62,13 +63,16 @@
     };
     
     document.addEventListener("DOMContentLoaded", function() {
-        var consentGiven = localStorage.getItem('cookieConsentGiven');
-        if (consentGiven === null) {
-            loadCookieManagementScripts();
-        } else {
-            console.log("Il sistema di gestione dei cookie non viene ricaricato perché il consenso è già stato gestito.");
-        }
-    });
+    var consentGiven = localStorage.getItem('cookieConsentGiven');
+    if (consentGiven) {
+        console.log("Il sistema di gestione dei cookie non viene ricaricato perché il consenso è già stato gestito.");
+        // Potresti ancora voler inizializzare iubenda per gestire altre logiche relative ai cookie
+    } else {
+        // Inizializzazione di iubenda e caricamento dei script come mostrato prima
+    }
+});
+
+ 
     
     function loadCookieManagementScripts() {
         // Script di iubenda e altri necessari per il funzionamento
