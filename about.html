@@ -17,88 +17,17 @@
   <meta name="robots" content="index, follow">
 
   <title>Jovenes Con Voz | Sobre erasmus+</title>
-  <script>var _iub = _iub || [];
-    _iub.csConfiguration = {
-        askConsentAtCookiePolicyUpdate: true,
-        enableFadp: true,
-        enableLgpd: true,
-        enableUspr: true,
-        fadpApplies: true,
-        floatingPreferencesButtonDisplay: "anchored-center-left",
-        lang: "es",
-        perPurposeConsent: true,
-        siteId: 3592554,
-        usprApplies: true,
-        whitelabel: false,
-        cookiePolicyId: 81824246,
-        banner: {
-            acceptButtonDisplay: true,
-            closeButtonDisplay: false,
-            customizeButtonDisplay: true,
-            explicitWithdrawal: true,
-            listPurposes: true,
-            position: "float-bottom-center",
-            rejectButtonDisplay: true,
-            showPurposesToggles: true,
-            showTitle: false
-        },
-        callback: {
-            onReady: function (consentGiven) {
-                console.log("Privacy Controls loaded, consent given: " + consentGiven);
-            },
-            onBannerShown: function () {
-                console.log("Banner shown");
-            },
-            onConsentGiven: function () {
-                console.log("User has given consent");
+
+  <script type="text/javascript">
+    var _iub = _iub || [];
+    _iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"enableFadp":true,"enableLgpd":true,"enableUspr":true,"fadpApplies":true,"floatingPreferencesButtonDisplay":"bottom-right","floatingPreferencesButtonIcon":false,"lang":"es","perPurposeConsent":true,"siteId":3592554,"usprApplies":true,"cookiePolicyId":81824246,"floatingPreferencesButtonCaption":true, "callback":{ "onConsentGiven": function() {
                 localStorage.setItem('cookieConsentGiven', 'true');
-            },
-            onConsentFirstGiven: function (actionTaken) {
-                console.log("First consent given with action: " + actionTaken);
-            },
-            onError: function (errorMsg) {
-                console.error("Error in Privacy Controls: " + errorMsg);
-            }
-        }
-    };
-    
-    document.addEventListener("DOMContentLoaded", function() {
-    var consentGiven = localStorage.getItem('cookieConsentGiven');
-    if (consentGiven) {
-        console.log("Il sistema di gestione dei cookie non viene ricaricato perché il consenso è già stato gestito.");
-        // Potresti ancora voler inizializzare iubenda per gestire altre logiche relative ai cookie
-    } else {
-        // Inizializzazione di iubenda e caricamento dei script come mostrato prima
-    }
-});
-
- 
-    
-    function loadCookieManagementScripts() {
-        // Script di iubenda e altri necessari per il funzionamento
-        var script1 = document.createElement('script');
-        script1.type = 'text/javascript';
-        script1.src = "https://cs.iubenda.com/autoblocking/3592554.js";
-        document.head.appendChild(script1);
-    
-        var script2 = document.createElement('script');
-        script2.type = 'text/javascript';
-        script2.src = "//cdn.iubenda.com/cs/gpp/stub.js";
-        document.head.appendChild(script2);
-    
-        var script3 = document.createElement('script');
-        script3.type = 'text/javascript';
-        script3.src = "//cdn.iubenda.com/cs/iubenda_cs.js";
-        script3.charset = 'UTF-8';
-        script3.async = true;
-        document.head.appendChild(script3);
-    }
-    
-</script> 
-
-  </script>
-  </script>
-
+                console.log("User has given consent and it's saved in localStorage.");
+            }, }, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"float-bottom-right","rejectButtonDisplay":true,"showPurposesToggles":true,"showTitle":false }};
+    </script>
+    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
   <!-- Stylesheet -->
   <link href="css/styles.css" rel="stylesheet" />
 
