@@ -10789,6 +10789,8 @@ header.masthead .page-heading,
 header.masthead .post-heading,
 header.masthead .site-heading {
   color: #fff;
+  position: relative;
+ 
 }
 header.masthead .page-heading,
 header.masthead .site-heading {
@@ -10923,10 +10925,6 @@ img {
   height: auto;
 }
 
-.masthead {
-  position: relative; 
-  min-height: 400px; /* Altezza minima: adatta come preferisci */
-}
 
 .video-background {
   position: absolute;
@@ -10944,12 +10942,12 @@ img {
 }
 
 .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   top: 0;
+  bottom: 0;
+  right: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Nero con 50% opacità */
 }
 
 .timeline-steps {

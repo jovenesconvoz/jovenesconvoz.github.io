@@ -20,28 +20,45 @@
 
   <script>var _iub = _iub || [];
     _iub.csConfiguration = {
-        "askConsentAtCookiePolicyUpdate": true,
-        "enableFadp": true,
-        "enableLgpd": true,
-        "enableUspr": true,
-        "fadpApplies": true,
-        "floatingPreferencesButtonDisplay": "anchored-center-left",
-        "lang": "es",
-        "perPurposeConsent": true,
-        "siteId": 3592554,
-        "usprApplies": true,
-        "whitelabel": false,
-        "cookiePolicyId": 81824246,
-        "banner": {
-            "acceptButtonDisplay": true,
-            "closeButtonDisplay": false,
-            "customizeButtonDisplay": true,
-            "explicitWithdrawal": true,
-            "listPurposes": true,
-            "position": "float-bottom-center",
-            "rejectButtonDisplay": true,
-            "showPurposesToggles": true,
-            "showTitle": false
+        askConsentAtCookiePolicyUpdate: true,
+        enableFadp: true,
+        enableLgpd: true,
+        enableUspr: true,
+        fadpApplies: true,
+        floatingPreferencesButtonDisplay: "anchored-center-left",
+        lang: "es",
+        perPurposeConsent: true,
+        siteId: 3592554,
+        usprApplies: true,
+        whitelabel: false,
+        cookiePolicyId: 81824246,
+        banner: {
+            acceptButtonDisplay: true,
+            closeButtonDisplay: false,
+            customizeButtonDisplay: true,
+            explicitWithdrawal: true,
+            listPurposes: true,
+            position: "float-bottom-center",
+            rejectButtonDisplay: true,
+            showPurposesToggles: true,
+            showTitle: false
+        },
+        callback: {
+            onReady: function (consentGiven) {
+                console.log("Privacy Controls loaded, consent given: " + consentGiven);
+            },
+            onBannerShown: function () {
+                console.log("Banner shown");
+            },
+            onConsentGiven: function () {
+                console.log("User has given consent");
+            },
+            onConsentFirstGiven: function (actionTaken) {
+                console.log("First consent given with action: " + actionTaken);
+            },
+            onError: function (errorMsg) {
+                console.error("Error in Privacy Controls: " + errorMsg);
+            }
         }
     };
     

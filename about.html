@@ -2,90 +2,108 @@
 <html lang="es">
 
 <head>
-    <!-- Character encoding and viewport settings -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Jovenes Con Voz | Reforzar la participación de los jóvenes en Europa">
-    <meta name="description"
-      content="Jóvenes Con Voz es un proyecto para fomentar la participación juvenil y fortalecer la ciudadanía activa en Europa, financiado por Erasmus+.">
-    <meta name="keywords"
-      content="participación juvenil, Erasmus+, juventud, educación Europa, ciudadanía activa, proyectos juveniles, desarrollo juvenil">
-  
-    <!-- Robots to ensure content is indexed and followed -->
-    <meta name="robots" content="index, follow">
-  
+  <!-- Character encoding and viewport settings -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Jovenes Con Voz | Reforzar la participación de los jóvenes en Europa">
+  <meta name="description"
+    content="Jóvenes Con Voz es un proyecto para fomentar la participación juvenil y fortalecer la ciudadanía activa en Europa, financiado por Erasmus+.">
+  <meta name="keywords"
+    content="participación juvenil, Erasmus+, juventud, educación Europa, ciudadanía activa, proyectos juveniles, desarrollo juvenil">
+
+  <!-- Robots to ensure content is indexed and followed -->
+  <meta name="robots" content="index, follow">
+
   <title>Jovenes Con Voz | Sobre erasmus+</title>
   <script>var _iub = _iub || [];
     _iub.csConfiguration = {
-        "askConsentAtCookiePolicyUpdate": true,
-        "enableFadp": true,
-        "enableLgpd": true,
-        "enableUspr": true,
-        "fadpApplies": true,
-        "floatingPreferencesButtonDisplay": "anchored-center-left",
-        "lang": "es",
-        "perPurposeConsent": true,
-        "siteId": 3592554,
-        "usprApplies": true,
-        "whitelabel": false,
-        "cookiePolicyId": 81824246,
-        "banner": {
-            "acceptButtonDisplay": true,
-            "closeButtonDisplay": false,
-            "customizeButtonDisplay": true,
-            "explicitWithdrawal": true,
-            "listPurposes": true,
-            "position": "float-bottom-center",
-            "rejectButtonDisplay": true,
-            "showPurposesToggles": true,
-            "showTitle": false
+        askConsentAtCookiePolicyUpdate: true,
+        enableFadp: true,
+        enableLgpd: true,
+        enableUspr: true,
+        fadpApplies: true,
+        floatingPreferencesButtonDisplay: "anchored-center-left",
+        lang: "es",
+        perPurposeConsent: true,
+        siteId: 3592554,
+        usprApplies: true,
+        whitelabel: false,
+        cookiePolicyId: 81824246,
+        banner: {
+            acceptButtonDisplay: true,
+            closeButtonDisplay: false,
+            customizeButtonDisplay: true,
+            explicitWithdrawal: true,
+            listPurposes: true,
+            position: "float-bottom-center",
+            rejectButtonDisplay: true,
+            showPurposesToggles: true,
+            showTitle: false
+        },
+        callback: {
+            onReady: function (consentGiven) {
+                console.log("Privacy Controls loaded, consent given: " + consentGiven);
+            },
+            onBannerShown: function () {
+                console.log("Banner shown");
+            },
+            onConsentGiven: function () {
+                console.log("User has given consent");
+            },
+            onConsentFirstGiven: function (actionTaken) {
+                console.log("First consent given with action: " + actionTaken);
+            },
+            onError: function (errorMsg) {
+                console.error("Error in Privacy Controls: " + errorMsg);
+            }
         }
     };
     
-    document.addEventListener("DOMContentLoaded", function() {
-        var consentGiven = localStorage.getItem('cookieConsentGiven');
-        if (consentGiven === null) {
-            loadCookieManagementScripts();
-        } else {
-            console.log("Il sistema di gestione dei cookie non viene ricaricato perché il consenso è già stato gestito.");
-        }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var consentGiven = localStorage.getItem('cookieConsentGiven');
+      if (consentGiven === null) {
+        loadCookieManagementScripts();
+      } else {
+        console.log("Il sistema di gestione dei cookie non viene ricaricato perché il consenso è già stato gestito.");
+      }
     });
-    
+
     function loadCookieManagementScripts() {
-        // Script di iubenda e altri necessari per il funzionamento
-        var script1 = document.createElement('script');
-        script1.type = 'text/javascript';
-        script1.src = "https://cs.iubenda.com/autoblocking/3592554.js";
-        document.head.appendChild(script1);
-    
-        var script2 = document.createElement('script');
-        script2.type = 'text/javascript';
-        script2.src = "//cdn.iubenda.com/cs/gpp/stub.js";
-        document.head.appendChild(script2);
-    
-        var script3 = document.createElement('script');
-        script3.type = 'text/javascript';
-        script3.src = "//cdn.iubenda.com/cs/iubenda_cs.js";
-        script3.charset = 'UTF-8';
-        script3.async = true;
-        document.head.appendChild(script3);
+      // Script di iubenda e altri necessari per il funzionamento
+      var script1 = document.createElement('script');
+      script1.type = 'text/javascript';
+      script1.src = "https://cs.iubenda.com/autoblocking/3592554.js";
+      document.head.appendChild(script1);
+
+      var script2 = document.createElement('script');
+      script2.type = 'text/javascript';
+      script2.src = "//cdn.iubenda.com/cs/gpp/stub.js";
+      document.head.appendChild(script2);
+
+      var script3 = document.createElement('script');
+      script3.type = 'text/javascript';
+      script3.src = "//cdn.iubenda.com/cs/iubenda_cs.js";
+      script3.charset = 'UTF-8';
+      script3.async = true;
+      document.head.appendChild(script3);
     }
-    
-</script> </script>
-  <!-- Meta tag for description -->
+
+  </script>
+  </script>
 
   <!-- Stylesheet -->
   <link href="css/styles.css" rel="stylesheet" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-  
+
 </head>
 
 <body>
@@ -103,18 +121,18 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto py-4 py-lg-0">
           <li class="nav-item">
-            <a class="nav-link px-lg-3 py-3 py-lg-4 text-to-translate text-dark" href="index.html"
-              id="a1">volver a la página principal</a>
+            <a class="nav-link px-lg-3 py-3 py-lg-4 text-to-translate text-dark" href="index.html" id="a1">volver a la
+              página principal</a>
           </li>
           <!-- Language toggle -->
           <li class="nav-item dropdown">
             <a class="nav-link px-lg-3 py-3 py-lg-4 dropdown-toggle text-to-translate text-dark" href="#" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false" id="a3">
-              Elegir idioma
+              data-bs-toggle="dropdown" aria-expanded="false">
+              文 
             </a>
             <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-              <li><a class="dropdown-item" href="#" onclick="toggleLanguage('english')">Proximamente</a></li>
-                <!--<li><a class="dropdown-item" href="#" onclick="toggleLanguage('spanish')">Español</a></li> -->
+              <li><a class="dropdown-item" href="#" onclick="toggleLanguage('english')">English</a></li>
+              <li><a class="dropdown-item" href="#" onclick="toggleLanguage('spanish')">Español</a></li>
             </ul>
           </li>
         </ul>
@@ -137,8 +155,8 @@
         <div class="col-md-10 col-lg-8 col-xl-7">
           <div class="site-heading text-center text-white">
             <!-- Title and subtitle -->
-            <h1>PROGRAMA ERASMUS+</h1>
-            <span class="subheading">Erasmus+, el programa de la Unión Europea para la educación, la formación, la
+            <h1 id="h1" class="text-to-translate">PROGRAMA ERASMUS+</h1>
+            <span class="subheading text-to-translate" id="s1">Erasmus+, el programa de la Unión Europea para la educación, la formación, la
               juventud y el deporte, ofrece una oportunidad única para que estudiantes, profesores, jóvenes y
               profesionales de todos los ámbitos exploren nuevas experiencias y amplíen sus horizontes.</span><br>
           </div>
@@ -151,7 +169,7 @@
   <!-- European Union Section -->
   <div class="container px-4 px-lg-5" id="european-section">
     <!-- EU Erasmus+ title and description -->
-    <h1 class="text-center">PROGRAMA ERASMUS+</h1>
+    <h1 class="text-center text-to-translate" id="h2">PROGRAMA ERASMUS+</h1>
     <p class="text-start text-to-translate" id="p1">
       Se ha dicho que la Unión Europea es el mayor proyecto político de la posguerra, y
       con toda probabilidad es correcto afirmar que es el mayor proyecto jamás
@@ -217,20 +235,21 @@
 
   <hr class="hr-minimal" />
 
-   <!-- Footer-->
-   <footer class="container-fluid bg-white text-dark py-4">
+  <!-- Footer-->
+  <footer class="container-fluid bg-white text-dark py-4">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
           <a href="/">
-            <img src="img/Screenshot 2024-03-13 at 13.00.48.png" alt="Jovenes con Voz logo" class="img-fluid" height="100">
+            <img src="img/banner-footer-logo.png" alt="Jovenes con Voz logo" class="img-fluid"
+              height="100">
           </a>
         </div>
         <div class="col-md-4 text-center">
           <p class="mt-2">&copy; 2024 Jovenes Con Voz</p>
         </div>
         <div class="col-md-4 text-center">
-          <ul class="list-inline mb-2"> 
+          <ul class="list-inline mb-2">
             <li class="list-inline-item">
               <a href="https://www.facebook.com/profile.php?id=61550747717604" class="text-dark">
                 <i class="fab fa-facebook"></i>
@@ -243,14 +262,15 @@
             </li>
           </ul>
           <p>
-             <a href="https://www.iubenda.com/privacy-policy/81824246" class="text-dark">Política de Privacidad</a> |
-             <a href="https://www.iubenda.com/privacy-policy/81824246/cookie-policy" class="text-dark">Política de Cookies </a>
+            <a href="https://www.iubenda.com/privacy-policy/81824246" class="text-dark">Política de Privacidad</a> |
+            <a href="https://www.iubenda.com/privacy-policy/81824246/cookie-policy" class="text-dark">Política de
+              Cookies </a>
           </p>
         </div>
       </div>
     </div>
   </footer>
-  
+
 
 
 
@@ -258,7 +278,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Core theme JS-->
   <script src="js/scripts.js"></script>
- <!-- <script src="js/aboutSwitch.js"></script>  -->
+  <script src="js/aboutSwitch.js"></script> 
 </body>
 
 </html>

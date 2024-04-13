@@ -5,10 +5,23 @@ var translations = {
         'english': 'Return to homepage',
         'spanish': 'Volver a la página principal'
     }, 
-    'a2': {
-        'english': 'Select language',
-        'spanish': 'Elegir idioma'
-    },
+    'h1': {
+        'english': 'ERASMUS+ PROGRAMME',
+        'spanish': 'PROGRAMA ERASMUS+'
+    }, 
+
+    'h2': {
+        'english': 'ERASMUS+ PROGRAMME',
+        'spanish': 'PROGRAMA ERASMUS+'
+    }, 
+
+    's1': {
+        'english': 'Erasmus+, the European Union s programme for education, training, youth and sport, offers a unique opportunity for students, teachers, young youth and sport, offers a unique opportunity for students, teachers, young people and professionals from all fields to explore new experiences and broaden their horizons. professionals from all backgrounds to explore new experiences and broaden their horizons.',
+        'spanish': 'Erasmus+, el programa de la Unión Europea para la educación, la formación, la juventud y el deporte, ofrece una oportunidad única para que estudiantes, profesores, jóvenes y profesionales de todos los ámbitos exploren nuevas experiencias y amplíen sus horizontes'
+    }, 
+
+
+    
     'p0': {
         'english': 'Since 2014, the Programme has been called Erasmus+, a very significant + as it marks the considerable enlargement, the extension - not only geographical and sectoral - which has allowed for more than 600,000 mobility activities in 2021. The programme s actions now cover all areas of Education - from primary school to university - Youth and Sport. The age range and profile of participants, the types of organisations involved and the projects that can be funded have been broadened. Learning continues to be central to all actions of the Programme, but with an increasing focus and balance between Formal, Non-formal and Vocational Education and Training.',
         'spanish': 'Desde 2014, el Programa se denomina Erasmus+, un + muy significativo ya que marca la considerable ampliación, la extensión -no solo geográfica y sectorial- que ha permitido superar las 600.000 actividades de movilidad en 2021. Las acciones del programa abarcan ahora todos los ámbitos de la Educación -desde la escuela primaria hasta la universidad-, la Juventud y el Deporte. Se ha ampliado el rango de edad y el perfil de los participantes, los tipos de organizaciones implicadas y los proyectos que pueden financiarse. El aprendizaje sigue siendo fundamental en todas las acciones del Programa, pero con un enfoque y un equilibrio cada vez mayores entre la Educación y Formación Formal, No Formal y Profesional'

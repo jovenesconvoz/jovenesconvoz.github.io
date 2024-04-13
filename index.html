@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -19,35 +20,51 @@
 
   <title>Jovenes Con Voz | Reforzar la participación de los jóvenes en Europa</title>
   <script>var _iub = _iub || [];
-    _iub.csConfiguration = {
-      "askConsentAtCookiePolicyUpdate": true,
-      "enableFadp": true,
-      "enableLgpd": true,
-      "enableUspr": true,
-      "fadpApplies": true,
-      "floatingPreferencesButtonDisplay": "anchored-center-left",
-      "lang": "es",
-      "perPurposeConsent": true,
-      "siteId": 3592554,
-      "usprApplies": true,
-      "whitelabel": false,
-      "cookiePolicyId": 81824246,
-      "banner": {
-        "acceptButtonDisplay": true,
-        "closeButtonDisplay": false,
-        "customizeButtonDisplay": true,
-        "explicitWithdrawal": true,
-        "listPurposes": true,
-        "position": "float-bottom-center",
-        "rejectButtonDisplay": true,
-        "showPurposesToggles": true,
-        "showTitle": false
-      }
+    var _iub = _iub || [];
+_iub.csConfiguration = {
+    askConsentAtCookiePolicyUpdate: true,
+    enableFadp: true,
+    enableLgpd: true,
+    enableUspr: true,
+    fadpApplies: true,
+    floatingPreferencesButtonDisplay: "anchored-center-left",
+    lang: "es",
+    perPurposeConsent: true,
+    siteId: 3592554,
+    usprApplies: true,
+    whitelabel: false,
+    cookiePolicyId: 81824246,
+    banner: {
+        acceptButtonDisplay: true,
+        closeButtonDisplay: false,
+        customizeButtonDisplay: true,
+        explicitWithdrawal: true,
+        listPurposes: true,
+        position: "float-bottom-center",
+        rejectButtonDisplay: true,
+        showPurposesToggles: true,
+        showTitle: false
+    },
+    callback: {
+        onReady: function (consentGiven) {
+            console.log("Privacy Controls loaded, consent given: " + consentGiven);
+        },
+        onBannerShown: function () {
+            console.log("Banner shown");
+        },
+        onConsentGiven: function () {
+            console.log("User has given consent");
+        },
+        onConsentFirstGiven: function (actionTaken) {
+            console.log("First consent given with action: " + actionTaken);
+        },
+        onError: function (errorMsg) {
+            console.error("Error in Privacy Controls: " + errorMsg);
+        }
+    }
+};
 
-
-
-
-    };
+  
 
     document.addEventListener("DOMContentLoaded", function () {
       var consentGiven = localStorage.getItem('cookieConsentGiven');
@@ -134,11 +151,11 @@
           <li class="nav-item dropdown">
             <a class="nav-link px-lg-3 py-3 py-lg-4 dropdown-toggle text-to-translate text-dark" href="#" role="button"
               data-bs-toggle="dropdown" aria-expanded="false" id="a3">
-              Elegir idioma
+              文 
             </a>
             <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-              <li><a class="dropdown-item" href="#" onclick="toggleLanguage('english')">Proximamente</a></li>
-              <!--<li><a class="dropdown-item" href="#" onclick="toggleLanguage('spanish')">Español</a></li> -->
+              <li><a class="dropdown-item" href="#" onclick="toggleLanguage('english')">English</a></li>
+              <li><a class="dropdown-item" href="#" onclick="toggleLanguage('spanish')">Español</a></li> 
             </ul>
           </li>
         </ul>
