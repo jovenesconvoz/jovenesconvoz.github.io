@@ -1,4 +1,3 @@
-
 var translations = {
   a1: {
     english: "Return to homepage",
@@ -18,23 +17,26 @@ var translations = {
   },
 };
 
-
 function toggleLanguage(language) {
   var elementsToUpdate = document.querySelectorAll(".text-to-translate");
 
   elementsToUpdate.forEach(function (element) {
-    var id = element.id;
-    if (translations[id]) {
-      element.innerHTML = translations[id][language];
-    }
+    element.style.opacity = 0;
+
+    setTimeout(function () {
+      if (translations[element.id]) {
+        element.innerHTML = translations[element.id][language];
+      }
+
+      element.style.opacity = 1;
+    }, 500);
   });
 }
 
-// When the document is ready, store the original text of each element
 document.addEventListener("DOMContentLoaded", function () {
   var elementsToSave = document.querySelectorAll(".text-to-translate");
 
   elementsToSave.forEach(function (element) {
-    originalTexts[element.id] = element.innerHTML; // <-- questa riga è stata commentata
+    originalTexts[element.id] = element.innerHTML;
   });
 });

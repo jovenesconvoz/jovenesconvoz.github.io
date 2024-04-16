@@ -17,8 +17,10 @@ var translations = {
     spanish: "documentación",
   },
   span1: {
-    english: "Freedom is not about being at the top of a tree, or even having an opinion. Freedom is not an empty space; freedom is participation.",
-    spanish: "La libertad no consiste en estar en la cima de un árbol, ni siquiera en tener una opinión. La libertad no es un espacio vacío; la libertad es participación.",
+    english:
+      "Freedom is not about being at the top of a tree, or even having an opinion. Freedom is not an empty space; freedom is participation.",
+    spanish:
+      "La libertad no consiste en estar en la cima de un árbol, ni siquiera en tener una opinión. La libertad no es un espacio vacío; la libertad es participación.",
   },
 
   h1: {
@@ -27,15 +29,22 @@ var translations = {
   },
 
   h2: {
-    english: "Jóvenes con Voz: Youth Participation, Community, Active Citizenship",
-    spanish: "Jóvenes con Voz: Participación Juvenil, Comunidad, Ciudadanía Activa",
+    english:
+      "Jóvenes con Voz: Youth Participation, Community, Active Citizenship",
+    spanish:
+      "Jóvenes con Voz: Participación Juvenil, Comunidad, Ciudadanía Activa",
+  },
+
+  h3: {
+    english: "Together we can achieve great things",
+    spanish: "Juntos podemos conseguir grandes cosas",
   },
 
   outcome: {
     english: "OUTCOMES",
     spanish: "RESULTADOS",
   },
-  
+
   btn1: {
     english: "Learn more about ERASMUS+",
     spanish: "Más información sobre ERASMUS+",
@@ -58,7 +67,6 @@ var translations = {
     spanish: "Descubre más",
   },
 
-
   p1: {
     english:
       "Jóvenes con Voz is a two-year project approved and funded in 2022 by the Spanish National Agency Erasmus+ with funds from Key Action 2 YOUTH (KA220-YOU - Cooperation Partnerships in Youth).",
@@ -66,7 +74,8 @@ var translations = {
       "Jóvenes con Voz es un proyecto de dos años de duración, aprobado y financiado en 2022 por la Agencia Nacional Española Erasmus+ con fondos de la Acción Clave 2 YOUTH (KA220-YOU - Cooperation Partnerships in Youth).",
   },
   p2: {
-    english: "Themes of the project (closely related each other): Youth Participation thought of as a practical exercise of democracy in communities, in the living and learning contexts of young people, and Citizenship, understood as a process, i.e., all that needs to be done, prepared, implemented concretely and progressively (especially by &quot;adults&quot;) so that young people can fully achieve it. Particularly significant and explanatory is the title of the project, which emphasizes the need - strongly felt by the new generations - to have theirvoices heard, that is, to participate actively and to have an impact in decision- making processes, in the definition of youth policies, in promoting social renewal (young people as the architects of their own generational destiny). Ultimately, that is the Goal of Jóvenes con Voz: to raise the level of awareness of our young people, offer them support and the necessary tools to allow them to acquire a defined role, greater weight and consideration in civil society.",
+    english:
+      "Themes of the project (closely related each other): Youth Participation thought of as a practical exercise of democracy in communities, in the living and learning contexts of young people, and Citizenship, understood as a process, i.e., all that needs to be done, prepared, implemented concretely and progressively (especially by &quot;adults&quot;) so that young people can fully achieve it. Particularly significant and explanatory is the title of the project, which emphasizes the need - strongly felt by the new generations - to have theirvoices heard, that is, to participate actively and to have an impact in decision- making processes, in the definition of youth policies, in promoting social renewal (young people as the architects of their own generational destiny). Ultimately, that is the Goal of Jóvenes con Voz: to raise the level of awareness of our young people, offer them support and the necessary tools to allow them to acquire a defined role, greater weight and consideration in civil society.",
     spanish:
       "Temas del proyecto (estrechamente interconectados entre sì): la Participación Juvenil concebida como un ejercicio práctico de democracia en las comunidades, en los contextos de vida y aprendizaje de los jóvenes, y la Ciudadanía, entendida como un proceso, es decir, todo lo que hay que hacer, preparar, implementar concreta y progresivamente (especialmente por parte de los &quot;adultos&quot;) para que los jóvenes puedan alcanzarla plenamente. Especialmente significativo y explicativo es el título del proyecto, que hace hincapié en la necesidad - fuertemente sentida por las nuevas generaciones - de hacer oír su voz, es decir, de participar activamente e influir en los procesos de toma de decisiones, en la definición de las políticas de juventud, en la promoción de la renovación social (los jóvenes artífices de su propio destino generacional). En definitiva, ese es el objetivo de Jóvenes con Voz: elevar el nivel de sensibilización de los jóvenes, ofrecerles apoyo y las herramientas necesarias para que adquieran un rol definido, mayor peso y consideración ante la sociedad civil.",
   },
@@ -93,25 +102,47 @@ var translations = {
     spanish:
       "Ante estas grandes cifras, con todas las iniciativas que Erasmus ha apoyado desde su nacimiento, da casi vértigo pensar que incluso Jóvenes con Voz con su partenariado, movilidades, actores implicados, actividades y sus Productos Intelectuales está dentro de este gran proceso. Además, por grande que sea el Movimiento Erasmus en su conjunto, no hay que olvidar que se sustenta en muchas pequeñas iniciativas en cuyo centro está la persona, el individuo con sus necesidades, cualidades, habilidades particulares.",
   },
+  p7: {
+    english: "HANDBOOK",
+    spanish: "MANUAL",
+  },
+
+  p8: {
+    english: "LOGBOOK",
+    spanish: "BITÀCORA",
+  },
+
+  p9: {
+    english: "VIDEOS",
+    spanish: "VÍDEOS",
+  },
+
+  p10: {
+    english: "Expected results",
+    spanish: "Resultados esperados",
+  },
 };
 
-// Function to change the language
 function toggleLanguage(language) {
   var elementsToUpdate = document.querySelectorAll(".text-to-translate");
 
   elementsToUpdate.forEach(function (element) {
-    var id = element.id;
-    if (translations[id]) {
-      element.innerHTML = translations[id][language];
-    }
+    element.style.opacity = 0;
+
+    setTimeout(function () {
+      if (translations[element.id]) {
+        element.innerHTML = translations[element.id][language];
+      }
+
+      element.style.opacity = 1;
+    }, 500);
   });
 }
 
-// When the document is ready, store the original text of each element
 document.addEventListener("DOMContentLoaded", function () {
   var elementsToSave = document.querySelectorAll(".text-to-translate");
 
   elementsToSave.forEach(function (element) {
-    originalTexts[element.id] = element.innerHTML; // <-- questa riga è stata commentata
+    originalTexts[element.id] = element.innerHTML;
   });
 });

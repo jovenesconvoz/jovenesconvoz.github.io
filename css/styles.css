@@ -11123,6 +11123,12 @@ ul.list-unstyled li {
 }
 
 
+.text-to-translate {
+  transition: opacity 0.5s ease;
+}
+
+
+
 
 
 
