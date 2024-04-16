@@ -20,14 +20,18 @@
 
   <script type="text/javascript">
     var _iub = _iub || [];
-    _iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"enableFadp":true,"enableLgpd":true,"enableUspr":true,"fadpApplies":true,"floatingPreferencesButtonDisplay":"bottom-right","floatingPreferencesButtonIcon":false,"lang":"es","perPurposeConsent":true,"siteId":3592554,"usprApplies":true,"cookiePolicyId":81824246,"floatingPreferencesButtonCaption":true, "callback":{ "onConsentGiven": function() {
-                localStorage.setItem('cookieConsentGiven', 'true');
-                console.log("User has given consent and it's saved in localStorage.");
-            }, }, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"float-bottom-right","rejectButtonDisplay":true,"showPurposesToggles":true,"showTitle":false }};
-    </script>
-    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
-    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+    _iub.csConfiguration = {
+      "askConsentAtCookiePolicyUpdate": true, "enableFadp": true, "enableLgpd": true, "enableUspr": true, "fadpApplies": true, "floatingPreferencesButtonDisplay": "bottom-right", "floatingPreferencesButtonIcon": false, "lang": "es", "perPurposeConsent": true, "siteId": 3592554, "usprApplies": true, "cookiePolicyId": 81824246, "floatingPreferencesButtonCaption": true, "callback": {
+        "onConsentGiven": function () {
+          localStorage.setItem('cookieConsentGiven', 'true');
+          console.log("User has given consent and it's saved in localStorage.");
+        },
+      }, "banner": { "acceptButtonDisplay": true, "closeButtonDisplay": false, "customizeButtonDisplay": true, "explicitWithdrawal": true, "listPurposes": true, "position": "float-bottom-right", "rejectButtonDisplay": true, "showPurposesToggles": true, "showTitle": false }
+    };
+  </script>
+  <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
+  <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+  <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
   <!-- Stylesheet -->
   <link href="css/styles.css" rel="stylesheet" />
 
@@ -62,7 +66,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link px-lg-3 py-3 py-lg-4 dropdown-toggle text-to-translate text-dark" href="#" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
-              文 
+              文
             </a>
             <ul class="dropdown-menu" aria-labelledby="languageDropdown">
               <li><a class="dropdown-item" href="#" onclick="toggleLanguage('english')">English</a></li>
@@ -89,8 +93,9 @@
         <div class="col-md-10 col-lg-8 col-xl-7">
           <div class="site-heading text-center text-white">
             <!-- Title and subtitle -->
-            <h1 id="h1" class="text-to-translate">PROGRAMA ERASMUS+</h1>
-            <span class="subheading text-to-translate" id="s1">Erasmus+, el programa de la Unión Europea para la educación, la formación, la
+            <h1 class="text-to-translate" id="h1">PROGRAMA ERASMUS+</h1>
+            <span class="subheading text-to-translate" id="s1">Erasmus+, el programa de la Unión Europea para la
+              educación, la formación, la
               juventud y el deporte, ofrece una oportunidad única para que estudiantes, profesores, jóvenes y
               profesionales de todos los ámbitos exploren nuevas experiencias y amplíen sus horizontes.</span><br>
           </div>
@@ -175,8 +180,7 @@
       <div class="row">
         <div class="col-md-4">
           <a href="/">
-            <img src="img/banner-footer-logo.png" alt="Jovenes con Voz logo" class="img-fluid"
-              height="100">
+            <img src="img/banner-footer-logo.png" alt="Jovenes con Voz logo" class="img-fluid" height="100">
           </a>
         </div>
         <div class="col-md-4 text-center">
@@ -212,7 +216,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Core theme JS-->
   <script src="js/scripts.js"></script>
-  <script src="js/aboutSwitch.js"></script> 
+  <script src="js/aboutSwitch.js"></script>
 </body>
 
 </html>
