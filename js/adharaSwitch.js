@@ -1,14 +1,14 @@
 
 var translations = {
-  a1_text_adhara: {
+  a1: {
     english: "Return to homepage",
     spanish: "Volver a la página principal",
   },
-  a2_text_adhara: {
+  a2: {
     english: "Select language",
     spanish: "Elegir la idioma",
   },
-  span1_text_adhara: {
+  span1: {
     english: "English translation for span1",
     spanish: "Spanish translation for span1",
   },

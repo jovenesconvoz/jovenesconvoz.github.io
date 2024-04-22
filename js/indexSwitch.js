@@ -121,6 +121,18 @@ var translations = {
     english: "Expected results",
     spanish: "Resultados esperados",
   },
+  
+
+  p11: {
+    english: "Bibliographic resources and documentation",
+    spanish: "Recursos bibliográficos y documentación",
+  },
+  
+
+  p12: {
+    english: "More information will be added soon",
+    spanish: "Pronto se añadirá más información",
+  },
 };
 
 function toggleLanguage(language) {
