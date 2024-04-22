@@ -11127,6 +11127,14 @@ ul.list-unstyled li {
   transition: opacity 0.5s ease;
 }
 
+.youtube-link {
+  color: #FF0000; /* Rosso YouTube */
+  font-size: 1.5rem; /* Dimensione del testo */
+}
+.youtube-link:hover {
+  text-decoration: none; /* Rimuove il sottolineamento al passaggio del mouse */
+  opacity: 0.8; /* Effetto di trasparenza al passaggio del mouse */
+}
 
 
 
