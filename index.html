@@ -18,16 +18,58 @@
   <meta name="robots" content="index, follow">
 
   <title>Jovenes Con Voz | Reforzar la participación de los jóvenes en Europa</title>
-  <script type="text/javascript">
-    var _iub = _iub || [];
-    _iub.csConfiguration = {
-      "askConsentAtCookiePolicyUpdate": true, "enableFadp": true, "enableLgpd": true, "enableUspr": true, "fadpApplies": true, "floatingPreferencesButtonDisplay": "bottom-right", "floatingPreferencesButtonIcon": false, "lang": "es", "perPurposeConsent": true, "siteId": 3592554, "usprApplies": true, "cookiePolicyId": 81824246, "floatingPreferencesButtonCaption": true, "callback": {
-        "onConsentGiven": function () {
-          localStorage.setItem('cookieConsentGiven', 'true');
-          console.log("User has given consent and it's saved in localStorage.");
-        },
-      }, "banner": { "acceptButtonDisplay": true, "closeButtonDisplay": false, "customizeButtonDisplay": true, "explicitWithdrawal": true, "listPurposes": true, "position": "float-bottom-right", "rejectButtonDisplay": true, "showPurposesToggles": true, "showTitle": false }
-    };
+  
+<script type="text/javascript">
+var _iub = _iub || [];
+_iub.csConfiguration = {
+  "askConsentAtCookiePolicyUpdate": false, // Modificato in false per non chiedere di nuovo al cambio politica
+  "enableFadp": true,
+  "enableLgpd": true,
+  "enableUspr": true,
+  "fadpApplies": true,
+  "floatingPreferencesButtonDisplay": "bottom-right",
+  "floatingPreferencesButtonIcon": false,
+  "lang": "es",
+  "perPurposeConsent": true,
+  "siteId": 3592554,
+  "usprApplies": true,
+  "cookiePolicyId": 81824246,
+  "floatingPreferencesButtonCaption": true,
+  "callback": {
+    "onConsentGiven": function () {
+      localStorage.setItem('cookieConsent', 'given');
+      console.log("User has given consent and it's saved in localStorage.");
+    },
+    "onConsentDenied": function () {
+      localStorage.setItem('cookieConsent', 'denied');
+      console.log("User has denied consent and it's saved in localStorage.");
+    }
+  },
+  "banner": {
+    "acceptButtonDisplay": true,
+    "closeButtonDisplay": false,
+    "customizeButtonDisplay": true,
+    "explicitWithdrawal": true,
+    "listPurposes": true,
+    "position": "float-bottom-right",
+    "rejectButtonDisplay": true,
+    "showPurposesToggles": true,
+    "showTitle": false
+  }
+};
+
+// Controlla all'avvio se il consenso è già stato dato o negato
+document.addEventListener("DOMContentLoaded", function() {
+  var consentStatus = localStorage.getItem('cookieConsent');
+  if (consentStatus === 'given' || consentStatus === 'denied') {
+    console.log("Consent already given or denied, no need to show the banner.");
+    // Qui puoi anche disattivare i cookie non essenziali se consentStatus è 'denied'
+  } else {
+    // Mostra il banner se non c'è un consenso salvato
+    // iubenda dovrebbe gestire la visualizzazione del banner se non trova i dati in localStorage
+  }
+});
+
   </script>
   <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
   <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
@@ -287,6 +329,19 @@
       que sin duda necesita
       ser relanzada. Esto es por lo meno lo que deberíamos a nuestros jóvenes. 
     </p>
+
+    <div class="ratio ratio-16x9" style="background-color: #000; overflow: hidden; position: relative;">
+      <iframe src="https://www.youtube.com/watch?v=GmCi4-ZJ2-0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+      </iframe>
+  </div>
+  
+    
+  </div>
   
 
   <br>
