@@ -18,62 +18,39 @@
   <meta name="robots" content="index, follow">
 
   <title>Jovenes Con Voz | Reforzar la participación de los jóvenes en Europa</title>
-  
-<script type="text/javascript">
-var _iub = _iub || [];
-_iub.csConfiguration = {
-  "askConsentAtCookiePolicyUpdate": false, // Modificato in false per non chiedere di nuovo al cambio politica
-  "enableFadp": true,
-  "enableLgpd": true,
-  "enableUspr": true,
-  "fadpApplies": true,
-  "floatingPreferencesButtonDisplay": "bottom-right",
-  "floatingPreferencesButtonIcon": false,
-  "lang": "es",
-  "perPurposeConsent": true,
-  "siteId": 3592554,
-  "usprApplies": true,
-  "cookiePolicyId": 81824246,
-  "floatingPreferencesButtonCaption": true,
-  "callback": {
-    "onConsentGiven": function () {
-      localStorage.setItem('cookieConsent', 'given');
-      console.log("User has given consent and it's saved in localStorage.");
-    },
-    "onConsentDenied": function () {
-      localStorage.setItem('cookieConsent', 'denied');
-      console.log("User has denied consent and it's saved in localStorage.");
-    }
-  },
-  "banner": {
-    "acceptButtonDisplay": true,
-    "closeButtonDisplay": false,
-    "customizeButtonDisplay": true,
-    "explicitWithdrawal": true,
-    "listPurposes": true,
-    "position": "float-bottom-right",
-    "rejectButtonDisplay": true,
-    "showPurposesToggles": true,
-    "showTitle": false
-  }
-};
-
-// Controlla all'avvio se il consenso è già stato dato o negato
-document.addEventListener("DOMContentLoaded", function() {
-  var consentStatus = localStorage.getItem('cookieConsent');
-  if (consentStatus === 'given' || consentStatus === 'denied') {
-    console.log("Consent already given or denied, no need to show the banner.");
-    // Qui puoi anche disattivare i cookie non essenziali se consentStatus è 'denied'
-  } else {
-    // Mostra il banner se non c'è un consenso salvato
-    // iubenda dovrebbe gestire la visualizzazione del banner se non trova i dati in localStorage
-  }
-});
-
-  </script>
-  <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
-  <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-  <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+  <script type="text/javascript">
+    var _iub = _iub || [];
+    _iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"enableFadp":true,"enableLgpd":true,"enableUspr":true,"fadpApplies":true,"floatingPreferencesButtonDisplay":"bottom-right","floatingPreferencesButtonIcon":false,"lang":"es","perPurposeConsent":true,"siteId":3592554,"usprApplies":true,"cookiePolicyId":81824246,"floatingPreferencesButtonCaption":true, "callback":{ "onConsentFirstGiven":function(action) {
+        console.log('First consent given via:', action);
+        localStorage.setItem('userConsent', 'true');
+        applyUserPreferences();
+    },"onConsentFirstRejected":function() {
+        console.log('First consent rejected.');
+        localStorage.removeItem('userConsent');
+    },"onConsentGiven":function() {
+        console.log('Consent given.');
+        localStorage.setItem('userConsent', 'true');
+        applyUserPreferences();
+    },"onConsentRejected":function() {
+        console.log('Consent rejected.');
+        localStorage.removeItem('userConsent');
+    },"onReady":function() {
+        var consent = localStorage.getItem('userConsent');
+        if (consent) {
+            console.log('Consent already given, initializing with user preferences.');
+            applyUserPreferences();
+        } else {
+            if (consentGiven) {
+                console.log('Consent is given for the first time or on current visit.');
+                localStorage.setItem('userConsent', 'true');
+                applyUserPreferences();
+            }
+        }
+    } }, "banner":{ "acceptButtonDisplay":true,"backgroundOverlay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"logo":null,"rejectButtonDisplay":true,"showPurposesToggles":true,"showTitle":false }};
+    </script>
+    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 
   <!-- Stylesheet -->
   <link href="css/styles.css" rel="stylesheet" />
