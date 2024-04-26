@@ -1,3 +1,4 @@
+// Object containing translations for various text elements on the page.
 var translations = {
   a1: {
     english: "Return to homepage",
@@ -17,22 +18,41 @@ var translations = {
   },
 };
 
+// Function to toggle the language displayed on the webpage.
 function toggleLanguage(language) {
+  // Select all elements that need language updates using the class 'text-to-translate'.
   var elementsToUpdate = document.querySelectorAll(".text-to-translate");
 
+  // Loop through each element to update its content based on the selected language.
   elementsToUpdate.forEach(function (element) {
-    var id = element.id;
-    if (translations[id]) {
-      element.innerHTML = translations[id][language];
-    }
+    // Initially set the opacity to 0 to create a fading effect.
+    element.style.opacity = 0;
+
+    // Set a timeout to delay the update, allowing the fade effect to show.
+    setTimeout(function () {
+      // Check if there is a translation available for the element's ID and the selected language.
+      if (translations[element.id]) {
+        // Update the innerHTML of the element to the new language text.
+        element.innerHTML = translations[element.id][language];
+      }
+
+      // Set opacity back to 1 to make the element fully visible again.
+      element.style.opacity = 1;
+    }, 500); // Delay time of 500 milliseconds.
   });
 }
 
-// When the document is ready, store the original text of each element
+// Event listener that triggers when the DOM content is fully loaded.
 document.addEventListener("DOMContentLoaded", function () {
+  // Select all elements that need to have their original texts saved.
   var elementsToSave = document.querySelectorAll(".text-to-translate");
 
+  // Initialize an object to store original texts if it doesn't exist.
+  originalTexts = originalTexts || {};
+
+  // Loop through each element to save its original innerHTML.
   elementsToSave.forEach(function (element) {
-    originalTexts[element.id] = element.innerHTML; // <-- questa riga è stata commentata
+    // Save the original innerHTML of each element by its ID.
+    originalTexts[element.id] = element.innerHTML;
   });
 });

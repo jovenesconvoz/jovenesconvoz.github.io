@@ -1,4 +1,4 @@
-// Object to store key-value pairs of translation texts for each element
+// Object containing translations for various text elements on the page.
 var translations = {
   a1: {
     english: "Partner",
@@ -40,6 +40,16 @@ var translations = {
     spanish: "Juntos podemos conseguir grandes cosas",
   },
 
+  h4: {
+    english: "Bibliographic resources and documentation",
+    spanish: "Recursos bibliográficos y documentación",
+  },
+
+  h5: {
+    english: "Jovenes Con Voz: The Documentary",
+    spanish: "Jovenes Con Voz: El Documental",
+  },
+
   outcome: {
     english: "OUTCOMES",
     spanish: "RESULTADOS",
@@ -49,6 +59,7 @@ var translations = {
     english: "Learn more about ERASMUS+",
     spanish: "Más información sobre ERASMUS+",
   },
+
   viewbutton: {
     english: "View PDF",
     spanish: "Ver PDF",
@@ -67,18 +78,25 @@ var translations = {
     spanish: "Descubre más",
   },
 
+  btn5: {
+    english: "Watch the full video on Youtube!",
+    spanish: "Ver el vídeo completo en Youtube!",
+  },
+
   p1: {
     english:
       "Jóvenes con Voz is a two-year project approved and funded in 2022 by the Spanish National Agency Erasmus+ with funds from Key Action 2 YOUTH (KA220-YOU - Cooperation Partnerships in Youth).",
     spanish:
       "Jóvenes con Voz es un proyecto de dos años de duración, aprobado y financiado en 2022 por la Agencia Nacional Española Erasmus+ con fondos de la Acción Clave 2 YOUTH (KA220-YOU - Cooperation Partnerships in Youth).",
   },
+
   p2: {
     english:
       "Themes of the project (closely related each other): Youth Participation thought of as a practical exercise of democracy in communities, in the living and learning contexts of young people, and Citizenship, understood as a process, i.e., all that needs to be done, prepared, implemented concretely and progressively (especially by &quot;adults&quot;) so that young people can fully achieve it. Particularly significant and explanatory is the title of the project, which emphasizes the need - strongly felt by the new generations - to have theirvoices heard, that is, to participate actively and to have an impact in decision- making processes, in the definition of youth policies, in promoting social renewal (young people as the architects of their own generational destiny). Ultimately, that is the Goal of Jóvenes con Voz: to raise the level of awareness of our young people, offer them support and the necessary tools to allow them to acquire a defined role, greater weight and consideration in civil society.",
     spanish:
       "Temas del proyecto (estrechamente interconectados entre sì): la Participación Juvenil concebida como un ejercicio práctico de democracia en las comunidades, en los contextos de vida y aprendizaje de los jóvenes, y la Ciudadanía, entendida como un proceso, es decir, todo lo que hay que hacer, preparar, implementar concreta y progresivamente (especialmente por parte de los &quot;adultos&quot;) para que los jóvenes puedan alcanzarla plenamente. Especialmente significativo y explicativo es el título del proyecto, que hace hincapié en la necesidad - fuertemente sentida por las nuevas generaciones - de hacer oír su voz, es decir, de participar activamente e influir en los procesos de toma de decisiones, en la definición de las políticas de juventud, en la promoción de la renovación social (los jóvenes artífices de su propio destino generacional). En definitiva, ese es el objetivo de Jóvenes con Voz: elevar el nivel de sensibilización de los jóvenes, ofrecerles apoyo y las herramientas necesarias para que adquieran un rol definido, mayor peso y consideración ante la sociedad civil.",
   },
+
   p3: {
     english:
       "Jóvenes con Voz is the result of the cooperation of five European partners from 4 countries: Adhara Association (the organization head of the project)  and Centro Jóven of the Municipality of Numancia de la Sagra (Spain), Euro-Net (Italy), KasTe (Latvia), and the RPJA network (France). In the two years of its implementation, Jóvenes con Voz has actively involved leaders of Youth Associations and Centres, Educators/Animators, Trainers and Youth Experts, Politicians, young people the 5 partners, among them, some with strong ICT skills. Two elements formed the common ground on which the partners forged a fruitful collaboration and developed the project: the Local Context, the community, the rootedness in the territory, but also the places, the spaces in which young people meet, socialize, interact and in which - or through which - they transfer, pour everything they learn (from Youth Centers to the Community: active young citizens in their own context). the Educational Action of youth animators/educators/technicians whose work supports participation and supports the Active Citizenship of the new generations by making use of Methods and Tools proper to Non-Formal Education. Results/Intellectual Outputs  The result of two intense years of work are 5 Products/Intellectual Outputs: a Handbook on Youth Participation in Europe 3 MOOCs this WEB Page a Logbook (a narrative that accompanies the whole development of Jóvenes con Voz)",
@@ -102,6 +120,7 @@ var translations = {
     spanish:
       "Ante estas grandes cifras, con todas las iniciativas que Erasmus ha apoyado desde su nacimiento, da casi vértigo pensar que incluso Jóvenes con Voz con su partenariado, movilidades, actores implicados, actividades y sus Productos Intelectuales está dentro de este gran proceso. Además, por grande que sea el Movimiento Erasmus en su conjunto, no hay que olvidar que se sustenta en muchas pequeñas iniciativas en cuyo centro está la persona, el individuo con sus necesidades, cualidades, habilidades particulares.",
   },
+
   p7: {
     english: "HANDBOOK",
     spanish: "MANUAL",
@@ -121,40 +140,69 @@ var translations = {
     english: "Expected results",
     spanish: "Resultados esperados",
   },
-  
-
-  p11: {
-    english: "Bibliographic resources and documentation",
-    spanish: "Recursos bibliográficos y documentación",
-  },
-  
 
   p12: {
     english: "More information will be added soon",
     spanish: "Pronto se añadirá más información",
   },
+
+  p13: {
+    english: "Give a voice to the young people of your municipality with Adhara",
+    spanish: "Dale voz a los jóvenes de tu municipio con Adhara",
+  },
+  p14: {
+    english: "Read the Jovenes Con Voz handbook, the fruit of the passionate work of all partners.",
+    spanish: "Lea el manual Jovenes Con Voz, fruto del apasionado trabajo de todos los socios",
+  },
+  p15: {
+    english: "Check out the Jóvenes con Voz logbook to discover the journey that has brought us here.",
+    spanish: "Consulta el cuaderno de bitácora de Jóvenes con Voz para descubrir el viaje que nos ha traído hasta aquí.",
+  },
+  p16: {
+    english: "See the work of the partners together with the young people in these video clips",
+    spanish: "Vea el trabajo de los socios junto con los jóvenes en estos videoclips"
+  },
+  p17: {
+    english: "Watch the MOOC developed with passion by Jovenes Con Voz partners.",
+    spanish: "Vea el MOOC desarrollado por los socios de Jovenes Con Voz.",
+  },
 };
 
+// Function to toggle the language displayed on the webpage.
 function toggleLanguage(language) {
+  // Select all elements that need language updates using the class 'text-to-translate'.
   var elementsToUpdate = document.querySelectorAll(".text-to-translate");
 
+  // Loop through each element to update its content based on the selected language.
   elementsToUpdate.forEach(function (element) {
+    // Initially set the opacity to 0 to create a fading effect.
     element.style.opacity = 0;
 
+    // Set a timeout to delay the update, allowing the fade effect to show.
     setTimeout(function () {
+      // Check if there is a translation available for the element's ID and the selected language.
       if (translations[element.id]) {
+        // Update the innerHTML of the element to the new language text.
         element.innerHTML = translations[element.id][language];
       }
 
+      // Set opacity back to 1 to make the element fully visible again.
       element.style.opacity = 1;
-    }, 500);
+    }, 500); // Delay time of 500 milliseconds.
   });
 }
 
+// Event listener that triggers when the DOM content is fully loaded.
 document.addEventListener("DOMContentLoaded", function () {
+  // Select all elements that need to have their original texts saved.
   var elementsToSave = document.querySelectorAll(".text-to-translate");
 
+  // Initialize an object to store original texts if it doesn't exist.
+  originalTexts = originalTexts || {};
+
+  // Loop through each element to save its original innerHTML.
   elementsToSave.forEach(function (element) {
+    // Save the original innerHTML of each element by its ID.
     originalTexts[element.id] = element.innerHTML;
   });
 });
