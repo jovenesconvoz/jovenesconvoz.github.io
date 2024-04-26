@@ -164,7 +164,7 @@ var translations = {
   },
   p17: {
     english: "Watch the MOOC developed with passion by Jovenes Con Voz partners.",
-    spanish: "Vea el MOOC desarrollado por los socios de Jovenes Con Voz.",
+    spanish: "Vea el MOOC desarrollado con pasión por los socios de Jovenes Con Voz.",
   },
 };
 
