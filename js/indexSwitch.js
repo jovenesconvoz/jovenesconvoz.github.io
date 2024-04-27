@@ -49,6 +49,10 @@ var translations = {
     english: "Jovenes Con Voz: The Documentary",
     spanish: "Jovenes Con Voz: El Documental",
   },
+  h6: {
+    english: "Youth Participation and Active Citizenship in Europe",
+    spanish: "Participación Juvenil y Ciudadanía Activa en Europa",
+  },
 
   outcome: {
     english: "OUTCOMES",
@@ -164,7 +168,7 @@ var translations = {
   },
   p17: {
     english: "Watch the MOOC developed with passion by Jovenes Con Voz partners.",
-    spanish: "Vea el MOOC desarrollado con pasión por los socios de Jovenes Con Voz.",
+    spanish: "Vea el MOOC desarrollado con pasión por los socios de Jovenes Con Voz",
   },
 };
 
