@@ -32,13 +32,37 @@
   <!-- Cookie consent and GDPR compliance scripts -->
   <script type="text/javascript">
     var _iub = _iub || [];
-    _iub.csConfiguration = {
-      "askConsentAtCookiePolicyUpdate": true, "enableFadp": true, "enableLgpd": true, "enableUspr": true, "fadpApplies": true, "floatingPreferencesButtonDisplay": "bottom-right", "floatingPreferencesButtonIcon": false, "lang": "es", "perPurposeConsent": true, "siteId": 3592554, "usprApplies": true, "cookiePolicyId": 81824246, "floatingPreferencesButtonCaption": true, "banner": { "acceptButtonDisplay": true, "backgroundOverlay": true, "closeButtonDisplay": false, "customizeButtonDisplay": true, "explicitWithdrawal": true, "listPurposes": true, "rejectButtonDisplay": true, "showPurposesToggles": true, "showTitle": false }
-    };
-  </script>
-  <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
-  <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-  <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async defer></script>
+    _iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"enableFadp":true,"enableLgpd":true,"enableUspr":true,"fadpApplies":true,"floatingPreferencesButtonDisplay":"bottom-right","floatingPreferencesButtonIcon":false,"lang":"es","perPurposeConsent":true,"siteId":3592554,"usprApplies":true,"cookiePolicyId":81824246,"floatingPreferencesButtonCaption":true, "callback":{ "onConsentFirstGiven":function(action) {
+        console.log('First consent given via:', action);
+        localStorage.setItem('userConsent', 'true');
+        applyUserPreferences();
+    },"onConsentFirstRejected":function() {
+        console.log('First consent rejected.');
+        localStorage.removeItem('userConsent');
+    },"onConsentGiven":function() {
+        console.log('Consent given.');
+        localStorage.setItem('userConsent', 'true');
+        applyUserPreferences();
+    },"onConsentRejected":function() {
+        console.log('Consent rejected.');
+        localStorage.removeItem('userConsent');
+    },"onReady":function() {
+        var consent = localStorage.getItem('userConsent');
+        if (consent) {
+            console.log('Consent already given, initializing with user preferences.');
+            applyUserPreferences();
+        } else {
+            if (consentGiven) {
+                console.log('Consent is given for the first time or on current visit.');
+                localStorage.setItem('userConsent', 'true');
+                applyUserPreferences();
+            }
+        }
+    } }, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"logo":null,"ownerName":"jovenesconvoz.github.io/","position":"bottom","rejectButtonDisplay":true,"showPurposesToggles":true,"showTitle":false,"showTotalNumberOfProviders":true }};
+    </script>
+    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top" id="mainNav">
