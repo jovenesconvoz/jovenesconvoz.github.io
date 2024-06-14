@@ -31,7 +31,7 @@
 
   <!-- Cookie consent and GDPR compliance scripts -->
  
-  <script type="text/javascript">
+ <script type="text/javascript">
     var _iub = _iub || [];
     _iub.csConfiguration = {
         "askConsentAtCookiePolicyUpdate": true,
@@ -71,7 +71,7 @@
                 if (consent) {
                     console.log('Consent already given, initializing with user preferences.');
                     applyUserPreferences();
-                    _iub.cs.api.consentGiven();  // Aggiungi questa linea per simulare che il consenso è già stato dato
+                    _iub.cs.api.consentGiven();  // Assicurati che questa chiamata sia qui
                 } else {
                     console.log('Consent not given yet.');
                 }
