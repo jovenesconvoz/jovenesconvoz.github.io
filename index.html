@@ -33,71 +33,37 @@
  
   <script type="text/javascript">
     var _iub = _iub || [];
-    _iub.csConfiguration = {
-        "askConsentAtCookiePolicyUpdate": true,
-        "enableFadp": true,
-        "enableLgpd": true,
-        "enableUspr": true,
-        "fadpApplies": true,
-        "floatingPreferencesButtonDisplay": "bottom-right",
-        "floatingPreferencesButtonIcon": false,
-        "lang": "es",
-        "perPurposeConsent": true,
-        "siteId": 3592554,
-        "usprApplies": true,
-        "cookiePolicyId": 81824246,
-        "floatingPreferencesButtonCaption": true,
-        "callback": {
-            "onConsentFirstGiven": function(action) {
-                console.log('First consent given via:', action);
+    _iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"enableFadp":true,"enableLgpd":true,"enableUspr":true,"fadpApplies":true,"floatingPreferencesButtonDisplay":"bottom-right","floatingPreferencesButtonIcon":false,"lang":"es","perPurposeConsent":true,"siteId":3592554,"usprApplies":true,"cookiePolicyId":81824246,"floatingPreferencesButtonCaption":true, "callback":{ "onConsentFirstGiven":function(action) {
+        console.log('First consent given via:', action);
+        localStorage.setItem('userConsent', 'true');
+        applyUserPreferences();
+    },"onConsentFirstRejected":function() {
+        console.log('First consent rejected.');
+        localStorage.removeItem('userConsent');
+    },"onConsentGiven":function() {
+        console.log('Consent given.');
+        localStorage.setItem('userConsent', 'true');
+        applyUserPreferences();
+    },"onConsentRejected":function() {
+        console.log('Consent rejected.');
+        localStorage.removeItem('userConsent');
+    },"onReady":function() {
+        var consent = localStorage.getItem('userConsent');
+        if (consent) {
+            console.log('Consent already given, initializing with user preferences.');
+            applyUserPreferences();
+        } else {
+            if (consentGiven) {
+                console.log('Consent is given for the first time or on current visit.');
                 localStorage.setItem('userConsent', 'true');
                 applyUserPreferences();
-            },
-            "onConsentFirstRejected": function() {
-                console.log('First consent rejected.');
-                localStorage.removeItem('userConsent');
-            },
-            "onConsentGiven": function() {
-                console.log('Consent given.');
-                localStorage.setItem('userConsent', 'true');
-                applyUserPreferences();
-            },
-            "onConsentRejected": function() {
-                console.log('Consent rejected.');
-                localStorage.removeItem('userConsent');
-            },
-            "onReady": function() {
-                var consent = localStorage.getItem('userConsent');
-                if (consent) {
-                    console.log('Consent already given, initializing with user preferences.');
-                    applyUserPreferences();
-                    _iub.cs.api.consentGiven();  // Aggiungi questa linea per simulare che il consenso è già stato dato
-                } else {
-                    console.log('Consent not given yet.');
-                }
             }
-        },
-        "banner": {
-            "acceptButtonDisplay": true,
-            "backgroundOverlay": true,
-            "closeButtonDisplay": false,
-            "customizeButtonDisplay": true,
-            "explicitWithdrawal": true,
-            "listPurposes": true,
-            "rejectButtonDisplay": true,
-            "showPurposesToggles": true,
-            "showTitle": false
         }
-    };
-
-    function applyUserPreferences() {
-        // Implementa qui la logica per applicare le preferenze dell'utente
-        console.log('Applying user preferences based on consent.');
-    }
-</script>
-<script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async defer></script>
+    } }, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"logo":null,"ownerName":"jovenesconvoz.github.io/","position":"bottom","rejectButtonDisplay":true,"showPurposesToggles":true,"showTitle":false,"showTotalNumberOfProviders":true }};
+    </script>
+    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 
 
 </head>
@@ -388,7 +354,7 @@
             <h3 class="card-title text-to-translate" id="p9">VÍDEOS</h3>
             <p class="card-text text-to-translate" id="p16">Vea el trabajo de los socios junto con los jóvenes en estos
               videoclips</p>
-            <a href="#" class="btn btn-primary text-to-translate disabled" id="btn3">Saber más</a>
+            <a href="videoclips.html" class="btn btn-primary text-to-translate" id="btn3">Saber más</a>
           </div>
         </div>
       </div>
@@ -398,7 +364,7 @@
             <h3 class="card-title text-to-translate">MOOC</h3>
             <p class="card-text text-to-translate" id="p17">Vea el MOOC desarrollado con pasión por los socios de
               Jovenes Con Voz.</p>
-            <a href="#" class="btn btn-primary text-to-translate disabled" id="btn4">Saber más</a>
+            <a href="mooc.html" class="btn btn-primary text-to-translate" id="btn4">Saber más</a>
           </div>
         </div>
       </div>
@@ -452,44 +418,44 @@
   </section>
 
 
-
-
   <hr class="hr-minimal" />
 
-  <!-- Footer-->
-  <footer class="container-fluid bg-white text-dark py-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <a href="/">
-            <img src="img/banner-footer-logo.png" alt="Jovenes con Voz logo" class="img-fluid" height="100">
-          </a>
-        </div>
-        <div class="col-md-4 text-center">
-          <p class="mt-2">&copy; 2024 Jovenes Con Voz</p>
-        </div>
-        <div class="col-md-4 text-center">
-          <ul class="list-inline mb-2">
-              <li class="list-inline-item">
-                  <a href="https://www.facebook.com/profile.php?id=61550747717604" class="text-dark">
-                      <i class="fab fa-facebook"></i>
-                  </a>
-              </li>
-              <li class="list-inline-item">
-                  <a href="https://www.youtube.com/channel/UCHkYOD-3fZbuGhwsADBd9ZQ" class="text-dark">
-                      <i class="fab fa-youtube"></i>
-                  </a>
-              </li>
-          </ul>
-          <p>
-              <a href="https://www.iubenda.com/privacy-policy/81824246" class="text-dark">Política de Privacidad</a> |
-              <a href="https://www.iubenda.com/privacy-policy/81824246/cookie-policy" class="text-dark">Política de Cookies</a>
-          </p>
+ <!-- Footer-->
+ <footer class="container-fluid bg-white text-dark py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <a href="/">
+          <img src="img/banner-footer-logo.PNG" alt="Jovenes con Voz logo" class="img-fluid"
+            height="100">
+        </a>
       </div>
-      
+      <div class="col-md-4 text-center">
+        <p class="mt-2">&copy; 2024 Jovenes Con Voz</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/profile.php?id=61550747717604" class="text-dark">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://www.youtube.com/@Jovenesconvozeu" class="text-dark">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </li>
+        </ul>
+        <p>
+          <a href="https://www.iubenda.com/privacy-policy/81824246" class="text-dark">Política de Privacidad</a> |
+          <a href="https://www.iubenda.com/privacy-policy/81824246/cookie-policy" class="text-dark">Política de
+            Cookies </a>
+        </p>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
+
 
 
 
