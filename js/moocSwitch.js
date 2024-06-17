@@ -4,9 +4,9 @@ var translations = {
     english: "Return to homepage",
     spanish: "Volver a la página principal",
   },
-  a2: {
-    english: "Select language",
-    spanish: "Elegir la idioma",
+  btn: {
+    english: "Watch the video",
+    spanish: "Ver el vídeo",
   },
   span1_text_handbook: {
     english: "English translation for span1",
