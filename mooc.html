@@ -32,37 +32,41 @@
   <!-- Cookie consent and GDPR compliance scripts -->
   <script type="text/javascript">
     var _iub = _iub || [];
-    _iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"enableFadp":true,"enableLgpd":true,"enableUspr":true,"fadpApplies":true,"floatingPreferencesButtonDisplay":"bottom-right","floatingPreferencesButtonIcon":false,"lang":"es","perPurposeConsent":true,"siteId":3592554,"usprApplies":true,"cookiePolicyId":81824246,"floatingPreferencesButtonCaption":true, "callback":{ "onConsentFirstGiven":function(action) {
-        console.log('First consent given via:', action);
-        localStorage.setItem('userConsent', 'true');
-        applyUserPreferences();
-    },"onConsentFirstRejected":function() {
-        console.log('First consent rejected.');
-        localStorage.removeItem('userConsent');
-    },"onConsentGiven":function() {
-        console.log('Consent given.');
-        localStorage.setItem('userConsent', 'true');
-        applyUserPreferences();
-    },"onConsentRejected":function() {
-        console.log('Consent rejected.');
-        localStorage.removeItem('userConsent');
-    },"onReady":function() {
-        var consent = localStorage.getItem('userConsent');
-        if (consent) {
+    _iub.csConfiguration = {
+      "askConsentAtCookiePolicyUpdate": true, "enableFadp": true, "enableLgpd": true, "enableUspr": true, "fadpApplies": true, "floatingPreferencesButtonDisplay": "bottom-right", "floatingPreferencesButtonIcon": false, "lang": "es", "perPurposeConsent": true, "siteId": 3592554, "usprApplies": true, "cookiePolicyId": 81824246, "floatingPreferencesButtonCaption": true, "callback": {
+        "onConsentFirstGiven": function (action) {
+          console.log('First consent given via:', action);
+          localStorage.setItem('userConsent', 'true');
+          applyUserPreferences();
+        }, "onConsentFirstRejected": function () {
+          console.log('First consent rejected.');
+          localStorage.removeItem('userConsent');
+        }, "onConsentGiven": function () {
+          console.log('Consent given.');
+          localStorage.setItem('userConsent', 'true');
+          applyUserPreferences();
+        }, "onConsentRejected": function () {
+          console.log('Consent rejected.');
+          localStorage.removeItem('userConsent');
+        }, "onReady": function () {
+          var consent = localStorage.getItem('userConsent');
+          if (consent) {
             console.log('Consent already given, initializing with user preferences.');
             applyUserPreferences();
-        } else {
+          } else {
             if (consentGiven) {
-                console.log('Consent is given for the first time or on current visit.');
-                localStorage.setItem('userConsent', 'true');
-                applyUserPreferences();
+              console.log('Consent is given for the first time or on current visit.');
+              localStorage.setItem('userConsent', 'true');
+              applyUserPreferences();
             }
+          }
         }
-    } }, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"logo":null,"ownerName":"jovenesconvoz.github.io/","position":"bottom","rejectButtonDisplay":true,"showPurposesToggles":true,"showTitle":false,"showTotalNumberOfProviders":true }};
-    </script>
-    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
-    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+      }, "banner": { "acceptButtonDisplay": true, "closeButtonDisplay": false, "customizeButtonDisplay": true, "explicitWithdrawal": true, "listPurposes": true, "logo": null, "ownerName": "jovenesconvoz.github.io/", "position": "bottom", "rejectButtonDisplay": true, "showPurposesToggles": true, "showTitle": false, "showTotalNumberOfProviders": true }
+    };
+  </script>
+  <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
+  <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+  <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 </head>
 
 <body>
@@ -122,157 +126,333 @@
     </div>
   </header>
 
- <!-- Courses Section -->
-<div class="container">
-  <h2 class="text-center mb-4">Versión española</h2>
-  <div class="row">
+  <!-- Courses Section -->
+  <div class="container">
+    <h2 class="text-center mb-4">Versión española</h2>
+    <div class="row">
       <!-- Course Cards go here -->
       <div class="col-md-4 mb-4">
-          <div class="card">
-              <img src="img/mooc-thumbnail-intro.png" class="card-img-top" alt="Course 1 Thumbnail">
-              <div class="card-body">
-                  <h5 class="card-title">INTRODUCCIÓN: Los 10 hitos de la participación juvenil</h5>
-                  <p class="card-text">Imagina que tu vida es como un camino lleno de aventuras y descubrimientos. Este es el tipo de viaje que los cinco socios de "Jóvenes con Voz" están ayudando a los jóvenes a emprender. Quieren que los jóvenes sean activos en sus comunidades y se conviertan en ciudadanos responsables.</p>
-                  <a href="https://www.youtube.com/watch?v=0nVTgYQCdR8&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=1" class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
-              </div>
+        <div class="card">
+          <img src="img/mooc-thumbnail-intro.png" class="card-img-top" alt="Course 1 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">INTRODUCCIÓN: Los 10 hitos de la participación juvenil</h5>
+            <p class="card-text">Imagina que tu vida es como un camino lleno de aventuras y descubrimientos. Este es el
+              tipo de viaje que los cinco socios de "Jóvenes con Voz" están ayudando a los jóvenes a emprender. Quieren
+              que los jóvenes sean activos en sus comunidades y se conviertan en ciudadanos responsables.</p>
+            <a href="https://www.youtube.com/watch?v=0nVTgYQCdR8&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=1"
+              class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
           </div>
-      </div>
-      <div class="col-md-4 mb-4">
-          <div class="card">
-              <img src="img/mooc-thumbnail-0.png" class="card-img-top" alt="Course 2 Thumbnail">
-              <div class="card-body">
-                  <h5 class="card-title">NIVEL 0 - SIN PARTICIPACIÓN</h5>
-                  <p class="card-text">Piensa en un joven que está solo y no se relaciona con otras personas. No sale de su habitación y pasa mucho tiempo jugando solo en su ordenador. Este nivel representa cuando alguien no participa ni interactúa con los demás. Es como estar aislado y no compartir tiempo ni experiencias con los demás.</p>
-                  <a href="https://www.youtube.com/watch?v=c3L_PHuTICE&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=2" class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
-              </div>
-          </div>
-      </div>
-      <div class="col-md-4 mb-4">
-          <div class="card">
-              <img src="img/mooc-thumbnail-1.png" class="card-img-top" alt="Course 3 Thumbnail">
-              <div class="card-body">
-                  <h5 class="card-title">NIVEL 1 - PARTICIPANTE PASIVO</h5>
-                  <p class="card-text">Imagina un joven que está comenzando a involucrarse más con otros jóvenes y adultos. Aquí, aprende a expresar sus ideas y opiniones mientras se siente más seguro de sí mismo. Es como dar los primeros pasos hacia ser parte activa de un grupo.</p>
-                  <a href="https://www.youtube.com/watch?v=p1WOwvo5gNo&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=3" class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
-              </div>
-          </div>
-      </div>
-      <div class="col-md-4 mb-4">
-          <div class="card">
-              <img src="img/mooc-thumbnail-2.png" class="card-img-top" alt="Course 4 Thumbnail">
-              <div class="card-body">
-                  <h5 class="card-title">NIVEL 2 - PARTICIPANTE ACTIVO</h5>
-                  <p class="card-text">Este nivel es como dar un paso más allá. El joven comienza a asumir pequeñas responsabilidades y a trabajar junto con otros para lograr cosas juntos. Aquí, entiende mejor lo que significa ser responsable y cómo puede contribuir al trabajo en equipo.</p>
-                  <a href="https://www.youtube.com/watch?v=XI4UgIzx5R0&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=4" class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
-              </div>
-          </div>
-      </div>
-      <div class="col-md-4 mb-4">
-          <div class="card">
-              <img src="img/mooc-thumbnail-3.png" class="card-img-top" alt="Course 5 Thumbnail">
-              <div class="card-body">
-                  <h5 class="card-title">NIVEL 3 - LÍDER</h5>
-                  <p class="card-text">Ahora, el joven está listo para tomar la iniciativa y liderar pequeños grupos o actividades. Aprende a comunicarse de manera efectiva con otros jóvenes y a explicar lo que se espera de ellos. Es el inicio de convertirse en un líder.</p>
-                  <a href="https://www.youtube.com/watch?v=vTlYht6zWEI&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=5" class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
-              </div>
-          </div>
-      </div>
-      <div class="col-md-4 mb-4">
-          <div class="card">
-              <img src="img/mooc-thumbnail-4.png" class="card-img-top" alt="Course 6 Thumbnail">
-              <div class="card-body">
-                  <h5 class="card-title">NIVEL 4 - MULTIPLICADOR</h5>
-                  <p class="card-text">En este nivel, el joven no solo lidera, sino que también educa y apoya a otros. Organiza talleres, guía equipos y fomenta la unidad entre los jóvenes. Ayuda a motivar a otros para que participen y trabajen juntos como equipo.</p>
-                  <a href="https://www.youtube.com/watch?v=T8Pd0R2ujgo&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=6" class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
-              </div>
-          </div>
+        </div>
       </div>
       <div class="col-md-4 mb-4">
         <div class="card">
-            <img src="img/mooc-thumbnail-5.png" class="card-img-top" alt="Course 6 Thumbnail">
-            <div class="card-body">
-                <h5 class="card-title">NIVEL 5 - COORDINADOR</h5>
-                <p class="card-text">El joven ya ha adquirido mucha experiencia. Ha participado en capacitaciones, proyectos internacionales y tiene mucho conocimiento para compartir. Puede liderar y coordinar eventos, compartir su experiencia y ayudar a otros a aprender.</p>
-                <a href="https://www.youtube.com/watch?v=ccyEc3AvupA&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=7" class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
-            </div>
+          <img src="img/mooc-thumbnail-0.png" class="card-img-top" alt="Course 2 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 0 - SIN PARTICIPACIÓN</h5>
+            <p class="card-text">Piensa en un joven que está solo y no se relaciona con otras personas. No sale de su
+              habitación y pasa mucho tiempo jugando solo en su ordenador. Este nivel representa cuando alguien no
+              participa ni interactúa con los demás. Es como estar aislado y no compartir tiempo ni experiencias con los
+              demás.</p>
+            <a href="https://www.youtube.com/watch?v=c3L_PHuTICE&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=2"
+              class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
+          </div>
         </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="card">
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-1.png" class="card-img-top" alt="Course 3 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 1 - PARTICIPANTE PASIVO</h5>
+            <p class="card-text">Imagina un joven que está comenzando a involucrarse más con otros jóvenes y adultos.
+              Aquí, aprende a expresar sus ideas y opiniones mientras se siente más seguro de sí mismo. Es como dar los
+              primeros pasos hacia ser parte activa de un grupo.</p>
+            <a href="https://www.youtube.com/watch?v=p1WOwvo5gNo&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=3"
+              class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-2.png" class="card-img-top" alt="Course 4 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 2 - PARTICIPANTE ACTIVO</h5>
+            <p class="card-text">Este nivel es como dar un paso más allá. El joven comienza a asumir pequeñas
+              responsabilidades y a trabajar junto con otros para lograr cosas juntos. Aquí, entiende mejor lo que
+              significa ser responsable y cómo puede contribuir al trabajo en equipo.</p>
+            <a href="https://www.youtube.com/watch?v=XI4UgIzx5R0&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=4"
+              class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-3.png" class="card-img-top" alt="Course 5 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 3 - LÍDER</h5>
+            <p class="card-text">Ahora, el joven está listo para tomar la iniciativa y liderar pequeños grupos o
+              actividades. Aprende a comunicarse de manera efectiva con otros jóvenes y a explicar lo que se espera de
+              ellos. Es el inicio de convertirse en un líder.</p>
+            <a href="https://www.youtube.com/watch?v=vTlYht6zWEI&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=5"
+              class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-4.png" class="card-img-top" alt="Course 6 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 4 - MULTIPLICADOR</h5>
+            <p class="card-text">En este nivel, el joven no solo lidera, sino que también educa y apoya a otros.
+              Organiza talleres, guía equipos y fomenta la unidad entre los jóvenes. Ayuda a motivar a otros para que
+              participen y trabajen juntos como equipo.</p>
+            <a href="https://www.youtube.com/watch?v=T8Pd0R2ujgo&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=6"
+              class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-5.png" class="card-img-top" alt="Course 6 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 5 - COORDINADOR</h5>
+            <p class="card-text">El joven ya ha adquirido mucha experiencia. Ha participado en capacitaciones, proyectos
+              internacionales y tiene mucho conocimiento para compartir. Puede liderar y coordinar eventos, compartir su
+              experiencia y ayudar a otros a aprender.</p>
+            <a href="https://www.youtube.com/watch?v=ccyEc3AvupA&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=7"
+              class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
           <img src="img/mooc-thumbnail-6.png" class="card-img-top" alt="Course 6 Thumbnail">
           <div class="card-body">
-              <h5 class="card-title">NIVEL 6 - DISEÑADOR DE PROYECTOS</h5>
-              <p class="card-text">Aquí, el joven puede convertir una idea en un proyecto real. Utiliza su experiencia y conocimiento para planificar y llevar a cabo actividades, identificar necesidades y establecer objetivos para proyectos locales e internacionales.</p>
-              <a href="https://www.youtube.com/watch?v=85SwtCE5-pw&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=8" class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
+            <h5 class="card-title">NIVEL 6 - DISEÑADOR DE PROYECTOS</h5>
+            <p class="card-text">Aquí, el joven puede convertir una idea en un proyecto real. Utiliza su experiencia y
+              conocimiento para planificar y llevar a cabo actividades, identificar necesidades y establecer objetivos
+              para proyectos locales e internacionales.</p>
+            <a href="https://www.youtube.com/watch?v=85SwtCE5-pw&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=8"
+              class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
           </div>
-      </div>
-  </div>
-  <div class="col-md-4 mb-4">
-    <div class="card">
-        <img src="img/mooc-thumbnail-7.png" class="card-img-top" alt="Course 6 Thumbnail">
-        <div class="card-body">
-            <h5 class="card-title">NIVEL 7 - GERENTE</h5>
-            <p class="card-text">El joven se convierte en un experto en gestión de proyectos. Puede planificar, supervisar y llevar a cabo proyectos de principio a fin, manejando todo, desde el presupuesto hasta los resultados. Es capaz de adaptarse y ajustar el proceso según sea necesario.</p>
-            <a href="https://www.youtube.com/watch?v=jB0Ia2gsLy8&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=9" class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
         </div>
-    </div>
-</div>
-<div class="col-md-4 mb-4">
-  <div class="card">
-      <img src="img/mooc-thumbnail-8.png" class="card-img-top" alt="Course 6 Thumbnail">
-      <div class="card-body">
-          <h5 class="card-title">NIVEL 8 - EMPRENDEDOR</h5>
-          <p class="card-text">Este joven tiene una mentalidad emprendedora. Inspira a otros jóvenes y puede liderar su propia organización o negocio. Representa su organización ante otros y tiene una visión clara de lo que quiere lograr.</p>
-          <a href="https://www.youtube.com/watch?v=2ntLiFRsJZY&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=10" class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
       </div>
-  </div>
-</div>
-<div class="col-md-4 mb-4">
-  <div class="card">
-      <img src="img/mooc-thumbnail-9.png" class="card-img-top" alt="Course 6 Thumbnail">
-      <div class="card-body">
-          <h5 class="card-title">NIVEL 9 – EXPERTO EN TECNOLOGÍAS</h5>
-          <p class="card-text">Los jóvenes en este nivel están a la vanguardia de la tecnología. Pueden transformar información en formatos digitales y utilizan sus habilidades informáticas para enseñar, investigar y crear. Son innovadores que están cambiando la forma en que se aprende y se comparte el conocimiento.</p>
-          <a href="https://www.youtube.com/watch?v=uFr6QRWbpOo&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=11" class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-7.png" class="card-img-top" alt="Course 6 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 7 - GERENTE</h5>
+            <p class="card-text">El joven se convierte en un experto en gestión de proyectos. Puede planificar,
+              supervisar y llevar a cabo proyectos de principio a fin, manejando todo, desde el presupuesto hasta los
+              resultados. Es capaz de adaptarse y ajustar el proceso según sea necesario.</p>
+            <a href="https://www.youtube.com/watch?v=jB0Ia2gsLy8&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=9"
+              class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
       </div>
-  </div>
-</div>
-<div class="col-md-4 mb-4">
-  <div class="card">
-      <img src="img/mooc-thumbnail-10.png" class="card-img-top" alt="Course 6 Thumbnail">
-      <div class="card-body">
-          <h5 class="card-title">NIVEL 10 - VOZ POLÍTICA O JOVEN CON VOZ</h5>
-          <p class="card-text">“Finalmente, tenemos al joven que está listo para influir en la política y la toma de decisiones. Representa a otros jóvenes, defiende sus derechos y trabaja con las autoridades para crear políticas que beneficien a la juventud. Su voz es poderosa y esencial para el cambio.”</p>
-          <a href="https://www.youtube.com/watch?v=uFr6QRWbpOo&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=11" class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-8.png" class="card-img-top" alt="Course 6 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 8 - EMPRENDEDOR</h5>
+            <p class="card-text">Este joven tiene una mentalidad emprendedora. Inspira a otros jóvenes y puede liderar
+              su propia organización o negocio. Representa su organización ante otros y tiene una visión clara de lo que
+              quiere lograr.</p>
+            <a href="https://www.youtube.com/watch?v=2ntLiFRsJZY&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=10"
+              class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
       </div>
-  </div>
-</div>
-<h2 class="text-center mb-4">English version</h2>
-<div class="col-md-4 mb-4">
-  <div class="card">
-      <img src="img/mooc-thumbnail-intro-en.png" class="card-img-top" alt="Course 6 Thumbnail">
-      <div class="card-body">
-          <h5 class="card-title">INTRODUCCIÓN: Los 10 hitos de la participación juvenil | ENGLISH SUB</h5>
-          <p class="card-text">Imagine your life as a path filled with adventures and discoveries. This is the kind of journey that the five partners of "Young Voices" are helping young people embark on. They want young people to be active in their communities and become responsible citizens.
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-9.png" class="card-img-top" alt="Course 6 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 9 – EXPERTO EN TECNOLOGÍAS</h5>
+            <p class="card-text">Los jóvenes en este nivel están a la vanguardia de la tecnología. Pueden transformar
+              información en formatos digitales y utilizan sus habilidades informáticas para enseñar, investigar y
+              crear. Son innovadores que están cambiando la forma en que se aprende y se comparte el conocimiento.</p>
+            <a href="https://www.youtube.com/watch?v=uFr6QRWbpOo&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=11"
+              class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-10.png" class="card-img-top" alt="Course 6 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 10 - VOZ POLÍTICA O JOVEN CON VOZ</h5>
+            <p class="card-text">“Finalmente, tenemos al joven que está listo para influir en la política y la toma de
+              decisiones. Representa a otros jóvenes, defiende sus derechos y trabaja con las autoridades para crear
+              políticas que beneficien a la juventud. Su voz es poderosa y esencial para el cambio.”</p>
+            <a href="https://www.youtube.com/watch?v=uFr6QRWbpOo&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=11"
+              class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
+      </div>
+      <h2 class="text-center mb-4">English version</h2>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-intro-en.png" class="card-img-top" alt="Course 6 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">INTRODUCCIÓN: Los 10 hitos de la participación juvenil | ENGLISH SUB</h5>
+            <p class="card-text">Imagine your life as a path filled with adventures and discoveries. This is the kind of
+              journey that the five partners of "Young Voices" are helping young people embark on. They want young
+              people to be active in their communities and become responsible citizens.
 
-            This is a special project that helps young people become more independent, participate more in society, and feel included in it. It also offers them opportunities to learn and grow.
+              This is a special project that helps young people become more independent, participate more in society,
+              and feel included in it. It also offers them opportunities to learn and grow.
             </p>
-          <a href="https://www.youtube.com/watch?v=uFr6QRWbpOo&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=11" class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
+            <a href="https://www.youtube.com/watch?v=uFr6QRWbpOo&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=11"
+              class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
       </div>
-  </div>
-</div>
-<div class="col-md-4 mb-4">
-  <div class="card">
-      <img src="img/mooc-thumbnail-1.png" class="card-img-top" alt="Course 6 Thumbnail">
-      <div class="card-body">
-          <h5 class="card-title">NIVEL 0 - SIN PARTICIPACIÓN | ENGLISH SUB </h5>
-          <p class="card-text">Imagine a young person who is alone and does not interact with others. They do not leave their room and spend a lot of time playing alone on their computer. This level represents when someone does not participate or interact with others. It’s like being isolated and not sharing time or experiences with others.</p>
-          <a href="https://www.youtube.com/watch?v=uFr6QRWbpOo&list=PLWnWB33rU3U70ZSTwsiFZKAvMeKpW_qBJ&index=11" class="btn btn-primary text-to-translate" target="_blank" id="btn">Ver el vídeo</a>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-0.png" class="card-img-top" alt="Course 6 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 0 - SIN PARTICIPACIÓN | ENGLISH SUB </h5>
+            <p class="card-text">Imagine a young person who is alone and does not interact with others. They do not
+              leave their room and spend a lot of time playing alone on their computer. This level represents when
+              someone does not participate or interact with others. It’s like being isolated and not sharing time or
+              experiences with others.</p>
+            <a href="https://www.youtube.com/watch?v=gKH39YcVIsc" class="btn btn-primary text-to-translate"
+              target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
       </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-1.png" class="card-img-top" alt="Course 3 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 1 - PARTICIPANTE PASIVO | ENGLISH SUB</h5>
+            <p class="card-text">Imagine a young person who is starting to engage more with other young people and
+              adults. Here, they learn to express their ideas and opinions while feeling more confident. It’s like
+              taking the first steps towards becoming an active part of a group.</p>
+            <a href="https://www.youtube.com/watch?v=3EWk0qQ1AwA" class="btn btn-primary text-to-translate"
+              target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-2.png" class="card-img-top" alt="Course 4 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 2 - PARTICIPANTE ACTIVO | ENGLISH SUB</h5>
+            <p class="card-text">This level is like taking a step further. The young person begins to take on small
+              responsibilities and work together with others to achieve things. Here, they better understand what it
+              means to be responsible and how they can contribute to teamwork.</p>
+            <a href="https://www.youtube.com/watch?v=d1kaQujfv5w" class="btn btn-primary text-to-translate"
+              target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-3.png" class="card-img-top" alt="Course 5 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 3 - LÍDER | ENGLISH SUB</h5>
+            <p class="card-text">Now, the young person is ready to take the initiative and lead small groups or
+              activities. They learn to communicate effectively with other young people and explain what is expected of
+              them. This is the beginning of becoming a leader.</p>
+            <a href="https://www.youtube.com/watch?v=gwE68aRUX_8" class="btn btn-primary text-to-translate"
+              target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-4.png" class="card-img-top" alt="Course 6 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 4 - MULTIPLICADOR | ENGLISH SUB</h5>
+            <p class="card-text">At this level, the young person not only leads but also educates and supports others.
+              They organize workshops, guide teams, and promote unity among young people. They help motivate others to
+              participate and work together as a team.</p>
+            <a href="https://www.youtube.com/watch?v=VF-jLkTeNFE" class="btn btn-primary text-to-translate"
+              target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-5.png" class="card-img-top" alt="Course 6 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 5 - COORDINADOR | ENGLISH SUB</h5>
+            <p class="card-text">The young person has now gained a lot of experience. They have participated in
+              trainings, international projects, and have much knowledge to share. They can lead and coordinate events,
+              share their experience, and help others learn.</p>
+            <a href="https://www.youtube.com/watch?v=iokSNUn1uWk" class="btn btn-primary text-to-translate"
+              target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-6.png" class="card-img-top" alt="Course 6 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 6 - DISEÑADOR DE PROYECTOS | ENGLISH SUB</h5>
+            <p class="card-text">Here, the young person can turn an idea into a real project. They use their experience
+              and knowledge to plan and carry out activities, identify needs, and set goals for local and international
+              projects.</p>
+            <a href="https://www.youtube.com/watch?v=xzQy1S1opMM" class="btn btn-primary text-to-translate"
+              target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-7.png" class="card-img-top" alt="Course 6 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 7 - GERENTE | ENGLISH SUB</h5>
+            <p class="card-text">The young person becomes an expert in project management. They can plan, supervise, and
+              carry out projects from start to finish, managing everything from the budget to the outcomes. They are
+              able to adapt and adjust the process as needed.</p>
+            <a href="https://www.youtube.com/watch?v=ARzTVjmx-yI" class="btn btn-primary text-to-translate"
+              target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-8.png" class="card-img-top" alt="Course 6 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 8 - EMPRENDEDOR | ENGLISH SUB</h5>
+            <p class="card-text">This young person has an entrepreneurial mindset. They inspire other young people and
+              can lead their own organization or business. They represent their organization to others and have a clear
+              vision of what they want to achieve.</p>
+            <a href="https://www.youtube.com/watch?v=pnNNFYV5QNA" class="btn btn-primary text-to-translate"
+              target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-9.png" class="card-img-top" alt="Course 6 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 9 – EXPERTO EN TECNOLOGÍAS | ENGLISH SUB</h5>
+            <p class="card-text">Young people at this level are at the forefront of technology. They can transform
+              information into digital formats and use their computer skills to teach, research, and create. They are
+              innovators who are changing the way knowledge is learned and shared.</p>
+            <a href="https://www.youtube.com/watch?v=jiCCQmtCjUo" class="btn btn-primary text-to-translate"
+              target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/mooc-thumbnail-10.png" class="card-img-top" alt="Course 6 Thumbnail">
+          <div class="card-body">
+            <h5 class="card-title">NIVEL 10 - VOZ POLÍTICA O JOVEN CON VOZ | ENGLISH SUB</h5>
+            <p class="card-text">Finally, we have the young person who is ready to influence policy and decision-making.
+              They represent other young people, advocate for their rights, and work with authorities to create policies
+              that benefit youth. Their voice is powerful and essential for change.
+            </p>
+            <a href="https://www.youtube.com/watch?v=nMg436AB2sg" class="btn btn-primary text-to-translate"
+              target="_blank" id="btn">Ver el vídeo</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-  </div>
-</div>
 
 
   <hr class="hr-minimal" />
@@ -283,8 +463,7 @@
       <div class="row">
         <div class="col-md-4">
           <a href="/">
-            <img src="img/banner-footer-logo.PNG" alt="Jovenes con Voz logo" class="img-fluid"
-              height="100">
+            <img src="img/banner-footer-logo.PNG" alt="Jovenes con Voz logo" class="img-fluid" height="100">
           </a>
         </div>
         <div class="col-md-4 text-center">
