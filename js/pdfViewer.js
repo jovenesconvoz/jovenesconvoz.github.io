@@ -1,4 +1,4 @@
-var pdfUrl = "assets/resources/MANUAL definitivo.pdf";
+var pdfUrl = "assets/resources/manual.pdf";
 
 document.getElementById("viewbutton").addEventListener("click", function () {
   window.open(pdfUrl, "_blank");
