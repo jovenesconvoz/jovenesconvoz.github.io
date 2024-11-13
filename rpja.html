@@ -32,37 +32,41 @@
   <!-- Cookie consent and GDPR compliance scripts -->
   <script type="text/javascript">
     var _iub = _iub || [];
-    _iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"enableFadp":true,"enableLgpd":true,"enableUspr":true,"fadpApplies":true,"floatingPreferencesButtonDisplay":"bottom-right","floatingPreferencesButtonIcon":false,"lang":"es","perPurposeConsent":true,"siteId":3592554,"usprApplies":true,"cookiePolicyId":81824246,"floatingPreferencesButtonCaption":true, "callback":{ "onConsentFirstGiven":function(action) {
-        console.log('First consent given via:', action);
-        localStorage.setItem('userConsent', 'true');
-        applyUserPreferences();
-    },"onConsentFirstRejected":function() {
-        console.log('First consent rejected.');
-        localStorage.removeItem('userConsent');
-    },"onConsentGiven":function() {
-        console.log('Consent given.');
-        localStorage.setItem('userConsent', 'true');
-        applyUserPreferences();
-    },"onConsentRejected":function() {
-        console.log('Consent rejected.');
-        localStorage.removeItem('userConsent');
-    },"onReady":function() {
-        var consent = localStorage.getItem('userConsent');
-        if (consent) {
+    _iub.csConfiguration = {
+      "askConsentAtCookiePolicyUpdate": true, "enableFadp": true, "enableLgpd": true, "enableUspr": true, "fadpApplies": true, "floatingPreferencesButtonDisplay": "bottom-right", "floatingPreferencesButtonIcon": false, "lang": "es", "perPurposeConsent": true, "siteId": 3592554, "usprApplies": true, "cookiePolicyId": 81824246, "floatingPreferencesButtonCaption": true, "callback": {
+        "onConsentFirstGiven": function (action) {
+          console.log('First consent given via:', action);
+          localStorage.setItem('userConsent', 'true');
+          applyUserPreferences();
+        }, "onConsentFirstRejected": function () {
+          console.log('First consent rejected.');
+          localStorage.removeItem('userConsent');
+        }, "onConsentGiven": function () {
+          console.log('Consent given.');
+          localStorage.setItem('userConsent', 'true');
+          applyUserPreferences();
+        }, "onConsentRejected": function () {
+          console.log('Consent rejected.');
+          localStorage.removeItem('userConsent');
+        }, "onReady": function () {
+          var consent = localStorage.getItem('userConsent');
+          if (consent) {
             console.log('Consent already given, initializing with user preferences.');
             applyUserPreferences();
-        } else {
+          } else {
             if (consentGiven) {
-                console.log('Consent is given for the first time or on current visit.');
-                localStorage.setItem('userConsent', 'true');
-                applyUserPreferences();
+              console.log('Consent is given for the first time or on current visit.');
+              localStorage.setItem('userConsent', 'true');
+              applyUserPreferences();
             }
+          }
         }
-    } }, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"logo":null,"ownerName":"jovenesconvoz.github.io/","position":"bottom","rejectButtonDisplay":true,"showPurposesToggles":true,"showTitle":false,"showTotalNumberOfProviders":true }};
-    </script>
-    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
-    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+      }, "banner": { "acceptButtonDisplay": true, "closeButtonDisplay": false, "customizeButtonDisplay": true, "explicitWithdrawal": true, "listPurposes": true, "logo": null, "ownerName": "jovenesconvoz.github.io/", "position": "bottom", "rejectButtonDisplay": true, "showPurposesToggles": true, "showTitle": false, "showTotalNumberOfProviders": true }
+    };
+  </script>
+  <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
+  <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+  <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 </head>
 
 <body>
@@ -115,7 +119,8 @@
           <div class="site-heading text-center text-white">
             <!-- Title and subtitle -->
             <h1 data-lang="es">RPJA</h1>
-            <span class="subheading text-to-translate" data-lang="es" id="span1">Los temas que abordamos son variados: deportes, cultura, compromiso,
+            <span class="subheading text-to-translate" data-lang="es" id="span1">Los temas que abordamos son variados:
+              deportes, cultura, compromiso,
               laicidad,
               participación cívica... Estos debates tienen lugar en diferentes barrios de
               Clermont-Ferrand y son de interés creciente para los profesionales locales.</span><br />
@@ -164,15 +169,18 @@
             De 2018 a 2022, organizamos noches de debate sobre los siguientes temas:
           </p>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item text-to-translate" id="l1">"Deportes e inclusión social en barrios prioritarios"</li>
+            <li class="list-group-item text-to-translate" id="l1">"Deportes e inclusión social en barrios prioritarios"
+            </li>
             <li class="list-group-item text-to-translate" id="l2">¿Es inclusiva la cultura?</li>
             <li class="list-group-item text-to-translate" id="l3">Espacio público y espacio educativo</li>
             <li class="list-group-item text-to-translate" id="l4">Laicidad en Francia</li>
             <li class="list-group-item text-to-translate" id="l5">Compromiso juvenil</li>
-            <li class="list-group-item text-to-translate" id="l6">Salud mental y trabajadores juveniles" con motivo de nuestra
+            <li class="list-group-item text-to-translate" id="l6">Salud mental y trabajadores juveniles" con motivo de
+              nuestra
               acogida del
               entrenamiento Erasmus+ "How are you really?"</li>
-            <li class="list-group-item text-to-translate" id="l7">Promoción del pensamiento crítico en los jóvenes" con motivo
+            <li class="list-group-item text-to-translate" id="l7">Promoción del pensamiento crítico en los jóvenes" con
+              motivo
               del décimo
               aniversario de la asociación y durante nuestra semana de entrenamiento Erasmus+
               "Who? What? Where? When? Why? How? Fostering Critical Thinking in Youth" </li>
@@ -187,13 +195,16 @@
           </p>
 
           <ul class="list-group list-group-flush">
-            <li class="list-group-item text-to-translate" id="l8">2012: Seminario Europeo Erasmus+ en colaboración con CREPS de
+            <li class="list-group-item text-to-translate" id="l8">2012: Seminario Europeo Erasmus+ en colaboración con
+              CREPS de
               Vichy con el
               objetivo de generar nuevos proyectos sobre</li>
-            <li class="list-group-item text-to-translate" id="l9">2016: Seminario nacional que involucra a 3 regiones para
+            <li class="list-group-item text-to-translate" id="l9">2016: Seminario nacional que involucra a 3 regiones
+              para
               presentar el programa
               Erasmus+</li>
-            <li class="list-group-item text-to-translate" id="l10">Junio de 2022: Seminario Europeo Erasmus+ KA153 "Buenas
+            <li class="list-group-item text-to-translate" id="l10">Junio de 2022: Seminario Europeo Erasmus+ KA153
+              "Buenas
               Prácticas para la
               Inclusión Social de los Jóvenes". Durante una semana, participantes de Rumania,
               España, Croacia, Alemania y Francia (Clermont-Ferrand, París, Marsella)
@@ -201,14 +212,16 @@
               también visitaron los barrios de Clermont-Ferrand, tuvieron la oportunidad de
               conocer a trabajadores juveniles locales y descubrir numerosos proyectos locales en
               curso.</li>
-            <li class="list-group-item text-to-translate" id="l11">Enero de 2023: Proyecto Erasmus+ KA153 "How are you really ? "
+            <li class="list-group-item text-to-translate" id="l11">Enero de 2023: Proyecto Erasmus+ KA153 "How are you
+              really ? "
               Acogida de
               participantes para una formación de una semana, durante la cual los participantes
               de Europa se beneficiaron de contenido teórico y práctico sobre salud mental para
               proponer talleres en sus respectivos países. Estos participantes también escribieron
               colectivamente una "guía de bolsillo" e intercambiaron visiones, prácticas y
               experiencias.</li>
-            <li class="list-group-item text-to-translate" id="l12">Septiembre de 2023: Proyecto Erasmus+ KA153 "Who? What? Where?
+            <li class="list-group-item text-to-translate" id="l12">Septiembre de 2023: Proyecto Erasmus+ KA153 "Who?
+              What? Where?
               When?
               Why? How? Fostering Critical Thinking in Youth" Con el objetivo de fortalecer las
               capacidades de los trabajadores juveniles en torno al pensamiento crítico,
@@ -224,9 +237,9 @@
             <a class="btn btn-primary text-to-translate" href="" id="btn1">Para
               saber más</a>
           </div>
-          </div>
         </div>
       </div>
+    </div>
   </article>
 
 
@@ -239,8 +252,7 @@
       <div class="row">
         <div class="col-md-4">
           <a href="/">
-            <img src="img/banner-footer-logo.PNG" alt="Jovenes con Voz logo" class="img-fluid"
-              height="100">
+            <img src="img/banner-footer-logo.PNG" alt="Jovenes con Voz logo" class="img-fluid" height="100">
           </a>
         </div>
         <div class="col-md-4 text-center">
@@ -260,12 +272,24 @@
             </li>
           </ul>
           <p>
-         <a href="https://www.iubenda.com/privacy-policy/81824246" class="iubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe " title="Política de Privacidad ">Política de Privacidad</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+            <a href="https://www.iubenda.com/privacy-policy/81824246"
+              class="iubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe "
+              title="Política de Privacidad ">Política de Privacidad</a>
+            <script
+              type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>
 
 
-<a href="https://www.iubenda.com/privacy-policy/81824246/cookie-policy" class="iubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe " title="Política de Cookies ">Política de Cookies</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+            <a href="https://www.iubenda.com/privacy-policy/81824246/cookie-policy"
+              class="iubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe "
+              title="Política de Cookies ">Política de Cookies</a>
+            <script
+              type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>
 
-<a href="https://www.iubenda.com/condiciones-de-uso/81824246" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Términos y Condiciones ">Términos y Condiciones</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+            <a href="https://www.iubenda.com/condiciones-de-uso/81824246"
+              class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe "
+              title="Términos y Condiciones ">Términos y Condiciones</a>
+            <script
+              type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>
         </div>
       </div>
     </div>
@@ -280,7 +304,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Core theme JS-->
   <script src="js/scripts.js"></script>
-  <script src="js/rpjaSwitch.js"></script> 
+  <script src="js/rpjaSwitch.js"></script>
 </body>
 
 </html>
