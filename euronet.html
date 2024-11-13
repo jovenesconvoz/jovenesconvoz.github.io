@@ -32,38 +32,43 @@
   <!-- Cookie consent and GDPR compliance scripts -->
   <script type="text/javascript">
     var _iub = _iub || [];
-    _iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"enableFadp":true,"enableLgpd":true,"enableUspr":true,"fadpApplies":true,"floatingPreferencesButtonDisplay":"bottom-right","floatingPreferencesButtonIcon":false,"lang":"es","perPurposeConsent":true,"siteId":3592554,"usprApplies":true,"cookiePolicyId":81824246,"floatingPreferencesButtonCaption":true, "callback":{ "onConsentFirstGiven":function(action) {
-        console.log('First consent given via:', action);
-        localStorage.setItem('userConsent', 'true');
-        applyUserPreferences();
-    },"onConsentFirstRejected":function() {
-        console.log('First consent rejected.');
-        localStorage.removeItem('userConsent');
-    },"onConsentGiven":function() {
-        console.log('Consent given.');
-        localStorage.setItem('userConsent', 'true');
-        applyUserPreferences();
-    },"onConsentRejected":function() {
-        console.log('Consent rejected.');
-        localStorage.removeItem('userConsent');
-    },"onReady":function() {
-        var consent = localStorage.getItem('userConsent');
-        if (consent) {
+    _iub.csConfiguration = {
+      "askConsentAtCookiePolicyUpdate": true, "enableFadp": true, "enableLgpd": true, "enableUspr": true, "fadpApplies": true, "floatingPreferencesButtonDisplay": "bottom-right", "floatingPreferencesButtonIcon": false, "lang": "es", "perPurposeConsent": true, "siteId": 3592554, "usprApplies": true, "cookiePolicyId": 81824246, "floatingPreferencesButtonCaption": true, "callback": {
+        "onConsentFirstGiven": function (action) {
+          console.log('First consent given via:', action);
+          localStorage.setItem('userConsent', 'true');
+          applyUserPreferences();
+        }, "onConsentFirstRejected": function () {
+          console.log('First consent rejected.');
+          localStorage.removeItem('userConsent');
+        }, "onConsentGiven": function () {
+          console.log('Consent given.');
+          localStorage.setItem('userConsent', 'true');
+          applyUserPreferences();
+        }, "onConsentRejected": function () {
+          console.log('Consent rejected.');
+          localStorage.removeItem('userConsent');
+        }, "onReady": function () {
+          var consent = localStorage.getItem('userConsent');
+          if (consent) {
             console.log('Consent already given, initializing with user preferences.');
             applyUserPreferences();
-        } else {
+          } else {
             if (consentGiven) {
-                console.log('Consent is given for the first time or on current visit.');
-                localStorage.setItem('userConsent', 'true');
-                applyUserPreferences();
+              console.log('Consent is given for the first time or on current visit.');
+              localStorage.setItem('userConsent', 'true');
+              applyUserPreferences();
             }
+          }
         }
-    } }, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"logo":null,"ownerName":"jovenesconvoz.github.io/","position":"bottom","rejectButtonDisplay":true,"showPurposesToggles":true,"showTitle":false,"showTotalNumberOfProviders":true }};
-    </script>
-    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
-    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+      }, "banner": { "acceptButtonDisplay": true, "closeButtonDisplay": false, "customizeButtonDisplay": true, "explicitWithdrawal": true, "listPurposes": true, "logo": null, "ownerName": "jovenesconvoz.github.io/", "position": "bottom", "rejectButtonDisplay": true, "showPurposesToggles": true, "showTitle": false, "showTotalNumberOfProviders": true }
+    };
+  </script>
+  <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
+  <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+  <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 </head>
+
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top" id="mainNav">
     <div class="container px-4 px-lg-5">
@@ -105,7 +110,7 @@
       </video>
     </div>
     <div class="overlay"></div>
-  
+
     <!-- Header content -->
     <div class="container position-relative px-4 px-lg-5">
       <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -129,7 +134,8 @@
         <div class="col-md-10 col-lg-8 col-xl-7">
           <!-- Themes Section -->
           <h2 class="section-heading text-to-translate" id="h1">EURO-NET... entre lo local y el internacional</h2>
-          <p class="text-start text-to-translate" id="p1">EURO-NET es una Asociación sin ánimo de lucro fundada en 1998 que
+          <p class="text-start text-to-translate" id="p1">EURO-NET es una Asociación sin ánimo de lucro fundada en 1998
+            que
             tiene a Europa
             como punto de referencia y sueño.
             Gracias a la combinación de un profundo arraigo en el contexto local y un intenso trabajo
@@ -145,31 +151,38 @@
             programas europeos.
             Euro-Net es también un Centro de Información y Desarrollo de Proyectos.
           </p>
-          <h2 class="section-heading text-to-translate" id="h2">INTERCULTURALIDAD, FORMACIÓN, DIGITALIZACIÓN, INNOVACIÓN,
+          <h2 class="section-heading text-to-translate" id="h2">INTERCULTURALIDAD, FORMACIÓN, DIGITALIZACIÓN,
+            INNOVACIÓN,
             SOSTENIBILIDAD</h2>
-          <p class="text-start text-to-translate" id="p2">En estas 5 palabras clave está todo el espíritu de Euro-Net, su
+          <p class="text-start text-to-translate" id="p2">En estas 5 palabras clave está todo el espíritu de Euro-Net,
+            su
             misión, lo que mejor la
             caracteriza, lo que más fundamenta su acción educativa:
           </p>
 
           <ul class="list-group list-group-flush">
-            <li class="list-group-item text-to-translate" id="l1">El compromiso de promover el diálogo entre culturas, y la
+            <li class="list-group-item text-to-translate" id="l1">El compromiso de promover el diálogo entre culturas, y
+              la
               movilidad internacional
               considerada como una gran oportunidad educativa, especialmente para los jóvenes</li>
-            <li class="list-group-item text-to-translate" id="l2">La habilidad para seguir el ritmo de la evolución tecnológica
+            <li class="list-group-item text-to-translate" id="l2">La habilidad para seguir el ritmo de la evolución
+              tecnológica
               y la capacidad para manejar
               herramientas digitales con gran potencial expresivo y creativo</li>
-            <li class="list-group-item text-to-translate" id="l3">Tener una misión pedagógica propia como referencia constante
+            <li class="list-group-item text-to-translate" id="l3">Tener una misión pedagógica propia como referencia
+              constante
               que lleva a Euro-Net a
               considerar la formación como un objetivo constante y transversal en todas las
               actividades que desarrolla</li>
-            <li class="list-group-item text-to-translate" id="l4">No tener miedo a salir de la comfort zone para aventurarse en
+            <li class="list-group-item text-to-translate" id="l4">No tener miedo a salir de la comfort zone para
+              aventurarse en
               terrenos inexplorados o
               poco conocidos. Una búsqueda constante de lo nuevo que confiera criterio a lo creado,
               un verdadero valor añadido a lo producido. En todo ello, el estímulo al espíritu
               emprendedor de los jóvenes, su apoyo en el lugar de trabajo y con fines lucrativos tiene
               un papel esencial en la acción del proyecto Euro-Net</li>
-            <li class="list-group-item text-to-translate" id="l5">Plena conciencia de lo que supone asumir un papel activo,
+            <li class="list-group-item text-to-translate" id="l5">Plena conciencia de lo que supone asumir un papel
+              activo,
               poner de su parte en la
               transición ecológica, un proceso de cambio epocal que requiere la adopción de otra
               actitud, comportamiento, estilo de vida, otra forma de vivir la relación con la realidad que
@@ -177,7 +190,8 @@
               oportunidad para el empleo y la adquisición de nuevas competencias</li>
           </ul>
           <h2 class="section-heading text-to-translate" id="h3">OBJETIVOS</h2>
-          <p class="text-start text-to-translate" id="p3">Promover la ciudadanía europea (motivando especialmente a los jóvenes
+          <p class="text-start text-to-translate" id="p3">Promover la ciudadanía europea (motivando especialmente a los
+            jóvenes
             para que se
             conviertan en ciudadanos activos de la UE)
             Contribuir significativamente a la inclusión de los inmigrantes y las personas con menos
@@ -202,23 +216,28 @@
           </p>
           <ul class="list-group list-group-flush">
             <li class="list-group-item text-to-translate" id="l6">Cursos de formación</li>
-            <li class="list-group-item text-to-translate" id="l7">Seminarios, Intercambios de Jóvenes, Talleres Temáticos,
+            <li class="list-group-item text-to-translate" id="l7">Seminarios, Intercambios de Jóvenes, Talleres
+              Temáticos,
               Encuentros Internacionales</li>
             <li class="list-group-item text-to-translate" id="l8">Estudios sectoriales, Investigación</li>
             <li class="list-group-item text-to-translate" id="l9">Mentoring, Coaching, Orientación/Asesoramiento</li>
             <li class="list-group-item text-to-translate" id="l10">Prácticas/Aprendizaje</li>
-            <li class="list-group-item text-to-translate" id="l11">Publicaciones (manuales, artículos, dibujos animados, guías y
+            <li class="list-group-item text-to-translate" id="l11">Publicaciones (manuales, artículos, dibujos animados,
+              guías y
               newsletters)</li>
             <li class="list-group-item text-to-translate" id="l12">Creación de redes y asociaciones</li>
-            <li class="list-group-item text-to-translate" id="l13">Actividades de aprendizaje digital (con la correspondiente
+            <li class="list-group-item text-to-translate" id="l13">Actividades de aprendizaje digital (con la
+              correspondiente
               creación de plataformas y
               sitios web innovadores)</li>
-            <li class="list-group-item text-to-translate" id="l14">Cómics, juegos electrónicos, vídeos, películas y otras
+            <li class="list-group-item text-to-translate" id="l14">Cómics, juegos electrónicos, vídeos, películas y
+              otras
               herramientas innovadoras</li>
 
           </ul>
           <h2 class="section-heading text-to-translate" id="h5">PROGRAMAS Y PROYECTOS</h2>
-          <p class="text-start text-to-translate" id="p5">Desde su creación hasta hoy, Euro-Net ha llevado a cabo más de 520
+          <p class="text-start text-to-translate" id="p5">Desde su creación hasta hoy, Euro-Net ha llevado a cabo más de
+            520
             proyectos, la
             mayoría de ellos financiados por Erasmus+ (Ka1, Ka2, Ka3, Deporte, Desarrollo de
             Capacidades), pero también otros programas de la UE como Juventud con Europa,
@@ -251,53 +270,70 @@
           </p>
 
           <ul class="list-group list-group-flush">
-            <li class="list-group-item text-to-translate" id="l15">Potenciar la creatividad y desarrollar las competencias
+            <li class="list-group-item text-to-translate" id="l15">Potenciar la creatividad y desarrollar las
+              competencias
               tecnológicas y digitales de los
               aprendices</li>
-            <li class="list-group-item text-to-translate" id="l16">Realización de películas (¡también para cine!), vídeos y
+            <li class="list-group-item text-to-translate" id="l16">Realización de películas (¡también para cine!),
+              vídeos y
               dibujos animados en 2D</li>
-            <li class="list-group-item text-to-translate" id="l17">Creación de sitios Web, apps, plataformas de e-learning,
+            <li class="list-group-item text-to-translate" id="l17">Creación de sitios Web, apps, plataformas de
+              e-learning,
               juegos electrónicos, etc.</li>
-            <li class="list-group-item text-to-translate" id="l18">Desarrollar proyectos y acciones innovadoras utilizando
+            <li class="list-group-item text-to-translate" id="l18">Desarrollar proyectos y acciones innovadoras
+              utilizando
               también herramientas de
               realidad aumentada</li>
-            <li class="list-group-item text-to-translate" id="l19">Actividades de narración y búsqueda de soluciones creativas
+            <li class="list-group-item text-to-translate" id="l19">Actividades de narración y búsqueda de soluciones
+              creativas
             </li>
-            <li class="list-group-item text-to-translate" id="l20">Prestar numerosos servicios de alto valor añadido</li>
+            <li class="list-group-item text-to-translate" id="l20">Prestar numerosos servicios de alto valor añadido
+            </li>
           </ul>
           <h2 class="section-heading text-to-translate" id="h7">Gestión del Centro TILT</h2>
-          <p class="text-start text-to-translate" id="p7">EURO-NET, como líder del Consorcio CONCRETO, gestiona el Centro Creativo TILT,
+          <p class="text-start text-to-translate" id="p7">EURO-NET, como líder del Consorcio CONCRETO, gestiona el
+            Centro Creativo TILT,
             situado en Marconia di Pisticci (provincia de Matera).
             El Centro fue diseñado y desarrollado como parte del Programa "Visioni Urbane",
             promovido por la Región de Basilicata junto con el Ministerio de Desarrollo Económico y
             financiado por el FAS (Fondo de Áreas Infrautilizadas).</p>
 
-          <h2 class="section-heading text-to-translate" id="h8">COMUNICACIÓN, DIFUSIÓN, CONTACTOS... una red de relaciones densa, extensa y
+          <h2 class="section-heading text-to-translate" id="h8">COMUNICACIÓN, DIFUSIÓN, CONTACTOS... una red de
+            relaciones densa, extensa y
             fructífera</h2>
-          <p class="text-start text-to-translate" id="p8">EURO-NET tiene una gran experiencia en actividades de difusión/explotación gracias a:
+          <p class="text-start text-to-translate" id="p8">EURO-NET tiene una gran experiencia en actividades de
+            difusión/explotación gracias a:
           </p>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item text-to-translate" id="l21">Newsletter/Boletín en italiano "Scopri l'Europa con noi", una
+            <li class="list-group-item text-to-translate" id="l21">Newsletter/Boletín en italiano "Scopri l'Europa con
+              noi", una
               revista de unas 50 páginas
               que se publica cada 15 días y se distribuye a 1.340 entidades públicas, medios de
               comunicación, ONG, empresas y lectores.</li>
-            <li class="list-group-item text-to-translate" id="l22">Boletín en inglés "Our Europe, Our Future!", revista de unas
+            <li class="list-group-item text-to-translate" id="l22">Boletín en inglés "Our Europe, Our Future!", revista
+              de unas
               30 páginas publicada cada 2
               meses y distribuida a 5.000 ONG de toda Europa.</li>
-            <li class="list-group-item text-to-translate" id="l23">2 sitios web (www.synergy-net.info y www.euro-net.eu) con más
+            <li class="list-group-item text-to-translate" id="l23">2 sitios web (www.synergy-net.info y www.euro-net.eu)
+              con más
               de 30.000 visitantes al
               año</li>
-            <li class="list-group-item text-to-translate" id="l24">2 cuentas de Facebook con más de 13.000 seguidores</li>
+            <li class="list-group-item text-to-translate" id="l24">2 cuentas de Facebook con más de 13.000 seguidores
+            </li>
             <li class="list-group-item text-to-translate" id="l25">1 cuenta de Twitter con más de 1.400 seguidores</li>
-            <li class="list-group-item text-to-translate" id="l26">3 cuentas de LinkedIn con más de 16.700 conexiones netas</li>
-            <li class="list-group-item text-to-translate" id="l27">Red Lavoradio, una radio nacional que emite en 13 regiones
+            <li class="list-group-item text-to-translate" id="l26">3 cuentas de LinkedIn con más de 16.700 conexiones
+              netas</li>
+            <li class="list-group-item text-to-translate" id="l27">Red Lavoradio, una radio nacional que emite en 13
+              regiones
               italianas y cuenta con
               800.000 oyentes, a través de la cual la asociación promueve cada 15-20 días proyectos
               europeos, convocatorias de propuestas, oportunidades e iniciativas</li>
-            <li class="list-group-item text-to-translate" id="l28">Rai3 Basilicata TV con la que se ha realizado un directorio
+            <li class="list-group-item text-to-translate" id="l28">Rai3 Basilicata TV con la que se ha realizado un
+              directorio
               específico para la promoción
               de oportunidades de empleo en Europa</li>
-            <li class="list-group-item text-to-translate" id="l29">Las buenas relaciones con los periódicos regionales permiten a
+            <li class="list-group-item text-to-translate" id="l29">Las buenas relaciones con los periódicos regionales
+              permiten a
               Euro-Net publicar cada
               año al menos 500-600 artículos sobre sus actividades</li>
           </ul>
@@ -312,37 +348,45 @@
             Algunos ejemplos significativos:
           </p>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item text-to-translate" id="l30">El proyecto "Innovation in VET for Jobs and Employment", en el
+            <li class="list-group-item text-to-translate" id="l30">El proyecto "Innovation in VET for Jobs and
+              Employment", en el
               que Euro-Net fue
               codiseñador y socio, fue premiado como "ejemplo de buenas prácticas" en el Programa
               Erasmus+ por la AN alemana en 2019</li>
-            <li class="list-group-item text-to-translate" id="l31">El proyecto "Integración mediante el aprendizaje social y
+            <li class="list-group-item text-to-translate" id="l31">El proyecto "Integración mediante el aprendizaje
+              social y
               digital", en el que EURO-NET
               fue codiseñador y socio, fue galardonado como "ejemplo de buenas prácticas" en el
               Programa Erasmus+ por la AN polaca en 2019</li>
-            <li class="list-group-item text-to-translate" id="l32">Su Cartoon "Il magico viaggio di Luca - storia animata della
+            <li class="list-group-item text-to-translate" id="l32">Su Cartoon "Il magico viaggio di Luca - storia
+              animata della
               Basilicata e dell'Europa" fue
               considerado MEJOR PRÁCTICA por la Oficina del Parlamento Europeo en Italia y el
               Ministerio de Desarrollo Económico italiano; por la Representación de la Comisión
               Europea en Italia como MEJOR EJEMPLO DE COMUNICACIÓN EUROPEA EN 2009</li>
-            <li class="list-group-item text-to-translate" id="l33">"La maleta, el mapa y el viaje de un animador juvenil", en el
+            <li class="list-group-item text-to-translate" id="l33">"La maleta, el mapa y el viaje de un animador
+              juvenil", en el
               que EURO-NET era socio,
               fue premiado como "historia de éxito y ejemplo de buenas prácticas" por un panel de
               expertos de la Dirección General de Educación, Juventud, Deporte y Cultura de la CE
               para el Programa Erasmus+ en 2017</li>
-            <li class="list-group-item text-to-translate" id="l34">"El espíritu de Europa-Orígenes", en el que EURO-NET era
+            <li class="list-group-item text-to-translate" id="l34">"El espíritu de Europa-Orígenes", en el que EURO-NET
+              era
               socio,
               fue galardonado
               como "ejemplo de buenas prácticas" en el Programa Erasmus+ por la AN polaca en 2022</li>
-            <li class="list-group-item text-to-translate" id="l35">Eurbanities 2.0", en el que EURO-NET participó como socio, fue
+            <li class="list-group-item text-to-translate" id="l35">Eurbanities 2.0", en el que EURO-NET participó como
+              socio, fue
               galardonado como
               "ejemplo de buenas prácticas" en el Programa Erasmus+ por la AN alemana en 2022</li>
-            <li class="list-group-item text-to-translate" id="l36">EU-ACT", del que EURO-NET era coordinador, fue galardonado
+            <li class="list-group-item text-to-translate" id="l36">EU-ACT", del que EURO-NET era coordinador, fue
+              galardonado
               como
               "ejemplo de
               buena práctica" en el Programa Erasmus+ por la AN italiana en 2022</li>
             <h2 class="section-heading text-to-translate" id="h10">El EQUIPO EURO-NET</h2>
-            <p class="text-start text-to-translate" id="p10">Los miembros de Euro-Net, con su formación y experiencia, cubren colectivamente un
+            <p class="text-start text-to-translate" id="p10">Los miembros de Euro-Net, con su formación y experiencia,
+              cubren colectivamente un
               amplio espectro de competencias, desde el diseño y la gestión de proyectos locales y
               europeos hasta la formación de calidad, pasando por la creación y puesta en marcha de
               productos innovadores con un alto componente tecnológico. Un equipo capaz de subirse
@@ -370,44 +414,55 @@
 
   <hr class="hr-minimal" />
 
- <!-- Footer-->
- <footer class="container-fluid bg-white text-dark py-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <a href="/">
-          <img src="img/banner-footer-logo.PNG" alt="Jovenes con Voz logo" class="img-fluid"
-            height="100">
-        </a>
-      </div>
-      <div class="col-md-4 text-center">
-        <p class="mt-2">&copy; 2024 Jovenes Con Voz</p>
-      </div>
-      <div class="col-md-4 text-center">
-        <ul class="list-inline mb-2">
-          <li class="list-inline-item">
-            <a href="https://www.facebook.com/profile.php?id=61550747717604" class="text-dark">
-              <i class="fab fa-facebook"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://www.youtube.com/@Jovenesconvozeu" class="text-dark">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </li>
-        </ul>
-        <p>
-         <a href="https://www.iubenda.com/privacy-policy/81824246" class="iubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe " title="Política de Privacidad ">Política de Privacidad</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+  <!-- Footer-->
+  <footer class="container-fluid bg-white text-dark py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <a href="/">
+            <img src="img/banner-footer-logo.PNG" alt="Jovenes con Voz logo" class="img-fluid" height="100">
+          </a>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="mt-2">&copy; 2024 Jovenes Con Voz</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/profile.php?id=61550747717604" class="text-dark">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/@Jovenesconvozeu" class="text-dark">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </li>
+          </ul>
+          <p>
+            <a href="https://www.iubenda.com/privacy-policy/81824246"
+              class="iubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe "
+              title="Política de Privacidad ">Política de Privacidad</a>
+            <script
+              type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>
 
 
-<a href="https://www.iubenda.com/privacy-policy/81824246/cookie-policy" class="iubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe " title="Política de Cookies ">Política de Cookies</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+            <a href="https://www.iubenda.com/privacy-policy/81824246/cookie-policy"
+              class="iubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe "
+              title="Política de Cookies ">Política de Cookies</a>
+            <script
+              type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>
 
-<a href="https://www.iubenda.com/condiciones-de-uso/81824246" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Términos y Condiciones ">Términos y Condiciones</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
-        </p>
+            <a href="https://www.iubenda.com/condiciones-de-uso/81824246"
+              class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe "
+              title="Términos y Condiciones ">Términos y Condiciones</a>
+            <script
+              type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 
 
