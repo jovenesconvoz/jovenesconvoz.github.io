@@ -30,40 +30,44 @@
   <title>Jovenes Con Voz | Fomentando la Participación Juvenil en Europa</title>
 
   <!-- Cookie consent and GDPR compliance scripts -->
- 
+
   <script type="text/javascript">
     var _iub = _iub || [];
-    _iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"enableFadp":true,"enableLgpd":true,"enableUspr":true,"fadpApplies":true,"floatingPreferencesButtonDisplay":"bottom-right","floatingPreferencesButtonIcon":false,"lang":"es","perPurposeConsent":true,"siteId":3592554,"usprApplies":true,"cookiePolicyId":81824246,"floatingPreferencesButtonCaption":true, "callback":{ "onConsentFirstGiven":function(action) {
-        console.log('First consent given via:', action);
-        localStorage.setItem('userConsent', 'true');
-        applyUserPreferences();
-    },"onConsentFirstRejected":function() {
-        console.log('First consent rejected.');
-        localStorage.removeItem('userConsent');
-    },"onConsentGiven":function() {
-        console.log('Consent given.');
-        localStorage.setItem('userConsent', 'true');
-        applyUserPreferences();
-    },"onConsentRejected":function() {
-        console.log('Consent rejected.');
-        localStorage.removeItem('userConsent');
-    },"onReady":function() {
-        var consent = localStorage.getItem('userConsent');
-        if (consent) {
+    _iub.csConfiguration = {
+      "askConsentAtCookiePolicyUpdate": true, "enableFadp": true, "enableLgpd": true, "enableUspr": true, "fadpApplies": true, "floatingPreferencesButtonDisplay": "bottom-right", "floatingPreferencesButtonIcon": false, "lang": "es", "perPurposeConsent": true, "siteId": 3592554, "usprApplies": true, "cookiePolicyId": 81824246, "floatingPreferencesButtonCaption": true, "callback": {
+        "onConsentFirstGiven": function (action) {
+          console.log('First consent given via:', action);
+          localStorage.setItem('userConsent', 'true');
+          applyUserPreferences();
+        }, "onConsentFirstRejected": function () {
+          console.log('First consent rejected.');
+          localStorage.removeItem('userConsent');
+        }, "onConsentGiven": function () {
+          console.log('Consent given.');
+          localStorage.setItem('userConsent', 'true');
+          applyUserPreferences();
+        }, "onConsentRejected": function () {
+          console.log('Consent rejected.');
+          localStorage.removeItem('userConsent');
+        }, "onReady": function () {
+          var consent = localStorage.getItem('userConsent');
+          if (consent) {
             console.log('Consent already given, initializing with user preferences.');
             applyUserPreferences();
-        } else {
+          } else {
             if (consentGiven) {
-                console.log('Consent is given for the first time or on current visit.');
-                localStorage.setItem('userConsent', 'true');
-                applyUserPreferences();
+              console.log('Consent is given for the first time or on current visit.');
+              localStorage.setItem('userConsent', 'true');
+              applyUserPreferences();
             }
+          }
         }
-    } }, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"logo":null,"ownerName":"jovenesconvoz.github.io/","position":"bottom","rejectButtonDisplay":true,"showPurposesToggles":true,"showTitle":false,"showTotalNumberOfProviders":true }};
-    </script>
-    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
-    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+      }, "banner": { "acceptButtonDisplay": true, "closeButtonDisplay": false, "customizeButtonDisplay": true, "explicitWithdrawal": true, "listPurposes": true, "logo": null, "ownerName": "jovenesconvoz.github.io/", "position": "bottom", "rejectButtonDisplay": true, "showPurposesToggles": true, "showTitle": false, "showTotalNumberOfProviders": true }
+    };
+  </script>
+  <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
+  <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+  <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 
 
 </head>
@@ -321,7 +325,7 @@
     </div>
   </div>
 
-<br><br>
+  <br><br>
 
   <div class="container px-4 px-lg-5">
     <h2 class="text-center text-to-translate mb-5" id="outcome">RESULTADOS</h2>
@@ -410,54 +414,73 @@
         <div class="card-body p-4">
           <h2 class="mb-3 text-to-translate" id="h4">Recursos bibliográficos y documentación</h2>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-to-translate" id="p12">Pronto se añadirá más información </a></li>
+            <li><a href="assets/documents/Joint Communication - Youth Action Plan in EU external action 2022 – 2027.pdf" class="text-to-translate">Joint Communication - Youth Action Plan in EU external action 2022 – 2027</a></li>
+            <li><a href="assets/documents/EU Youth Action Plan Analysis of the targeted consultation of the in EU External Action.pdf" class="text-to-translate">EU Youth Action Plan Analysis of the targeted consultation of the in EU External Action</a></li>
+            <li><a href="assets/documents/EU Youth Action Plan  Strategy.doc">EU Youth Action Plan Strategy 2020 - 2027</a></li>
+            <li><a href="assets/documents/EU YOUTH ACTION PLAN Questions_and_Answers__external_action_for_2022-2027.pdf" class="text-to-translate">EU YOUTH ACTION PLAN Questions and Answers for External Action 2022 - 2027</a></li>
+            <li><a href="assets/documents/5-Shades-of-Blue-Handbook.pdf">HANDBOOK: 5-Shades-of-Blue Handbook</a></li>
+            <li><a href="assets/documents/SALTO Youth-Participation-Toolkit.pdf" class="text-to-translate">BOOK: Serious Fun - Your Step-by-Step Guide by Mark Collard</a></li>
+            <li><a href="assets/documents/6397-Article The Nature of Education for Edgar Morin.pdf" class="text-to-translate">Article: The Nature of Education for Edgar Morin</a></li>
+            <li><a href="assets/documents/Erik_H_Erikson_Identity_Youth_and_Crisis.pdf" class="text-to-translate">BOOK: Erik H. Erikson - Identity, Youth, and Crisis</a></li>
+            <li><a href="assets/documents/Participation-Theory-Presentation-with-Notes.pdf" class="text-to-translate">Participation Theory Presentation with Notes</a></li>
+            <li><a href="assets/documents/SALTO Youth-Participation-Toolkit.pdf" class="text-to-translate">SALTO Toolkit: Youth Participation</a></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-
   <hr class="hr-minimal" />
 
- <!-- Footer-->
- <footer class="container-fluid bg-white text-dark py-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <a href="/">
-          <img src="img/banner-footer-logo.PNG" alt="Jovenes con Voz logo" class="img-fluid"
-            height="100">
-        </a>
-      </div>
-      <div class="col-md-4 text-center">
-        <p class="mt-2">&copy; 2024 Jovenes Con Voz</p>
-      </div>
-      <div class="col-md-4 text-center">
-        <ul class="list-inline mb-2">
-          <li class="list-inline-item">
-            <a href="https://www.facebook.com/profile.php?id=61550747717604" class="text-dark">
-              <i class="fab fa-facebook"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://www.youtube.com/@Jovenesconvozeu" class="text-dark">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </li>
-        </ul>
-        <p>
-         <a href="https://www.iubenda.com/privacy-policy/81824246" class="iubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe " title="Política de Privacidad ">Política de Privacidad</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+  <!-- Footer-->
+  <footer class="container-fluid bg-white text-dark py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <a href="/">
+            <img src="img/banner-footer-logo.PNG" alt="Jovenes con Voz logo" class="img-fluid" height="100">
+          </a>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="mt-2">&copy; 2024 Jovenes Con Voz</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/profile.php?id=61550747717604" class="text-dark">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.youtube.com/@Jovenesconvozeu" class="text-dark">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </li>
+          </ul>
+          <p>
+            <a href="https://www.iubenda.com/privacy-policy/81824246"
+              class="iubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe "
+              title="Política de Privacidad ">Política de Privacidad</a>
+            <script
+              type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>
 
 
-<a href="https://www.iubenda.com/privacy-policy/81824246/cookie-policy" class="iubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe " title="Política de Cookies ">Política de Cookies</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+            <a href="https://www.iubenda.com/privacy-policy/81824246/cookie-policy"
+              class="iubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe "
+              title="Política de Cookies ">Política de Cookies</a>
+            <script
+              type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>
 
-<a href="https://www.iubenda.com/condiciones-de-uso/81824246" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Términos y Condiciones ">Términos y Condiciones</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
-        </p>
+            <a href="https://www.iubenda.com/condiciones-de-uso/81824246"
+              class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe "
+              title="Términos y Condiciones ">Términos y Condiciones</a>
+            <script
+              type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 
 
