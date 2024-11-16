@@ -61,6 +61,8 @@
           "usprApplies": true,
           "cookiePolicyId": 81824246,
           "floatingPreferencesButtonCaption": true,
+          // Aggiungi il parametro localConsentDomain
+          "localConsentDomain": "jovenesconvoz.github.io",
           "callback": {
               "onConsentFirstGiven": function(action) {
                   console.log('Primo consenso dato tramite:', action);
@@ -90,7 +92,6 @@
                               _iub.cs.api.consent_rejected();
                           }
                       } else {
-                          // Attendi che l'API sia disponibile
                           setTimeout(hideBanner, 100);
                       }
                   }
@@ -103,7 +104,6 @@
                       hideBanner();
                   } else {
                       console.log('Nessun consenso ancora dato.');
-                      // Il banner apparirà perché il consenso non è stato ancora dato o rifiutato
                   }
               }
           },
@@ -125,7 +125,7 @@
       
       // Funzione per applicare le preferenze utente
       function applyUserPreferences() {
-          // Qui puoi inserire il codice per attivare gli script o le funzionalità che richiedono il consenso
+          // Codice per attivare gli script o le funzionalità che richiedono il consenso
           console.log('Preferenze utente applicate.');
       }
       </script>
