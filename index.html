@@ -82,15 +82,25 @@
               },
               "onReady": function() {
                   var consent = localStorage.getItem('userConsent');
+                  function hideBanner() {
+                      if (_iub && _iub.cs && _iub.cs.api) {
+                          if (consent === 'true') {
+                              _iub.cs.api.consent_given();
+                          } else if (consent === 'false') {
+                              _iub.cs.api.consent_rejected();
+                          }
+                      } else {
+                          // Attendi che l'API sia disponibile
+                          setTimeout(hideBanner, 100);
+                      }
+                  }
                   if (consent === 'true') {
                       console.log('Consenso già dato, applico le preferenze utente.');
                       applyUserPreferences();
-                      // Nascondi il banner se il consenso è già stato dato
-                      _iub.cs.api.dispatchEvent("iubenda_cs.consent_given");
+                      hideBanner();
                   } else if (consent === 'false') {
                       console.log('Consenso già rifiutato.');
-                      // Nascondi il banner se il consenso è già stato rifiutato
-                      _iub.cs.api.dispatchEvent("iubenda_cs.consent_rejected");
+                      hideBanner();
                   } else {
                       console.log('Nessun consenso ancora dato.');
                       // Il banner apparirà perché il consenso non è stato ancora dato o rifiutato
