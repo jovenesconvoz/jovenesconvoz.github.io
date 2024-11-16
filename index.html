@@ -110,17 +110,20 @@
       function applyUserPreferences() {
           var consent = localStorage.getItem('userConsent');
           console.log('Applying user preferences:', consent);
-          if (window._iub && window._iub.cs && window._iub.cs.api) {
-              if (consent === 'true') {
-                  console.log('Consent given. Banner should be hidden.');
-                  window._iub.cs.api.consentApplied();
-              } else if (consent === 'false') {
-                  console.log('Consent rejected. Adjusting preferences accordingly.');
-                  // Qui puoi aggiungere eventuali altre azioni se necessario
+  
+          // Aspetta che l'API Iubenda sia pronta
+          var interval = setInterval(function() {
+              if (window._iub && window._iub.cs && window._iub.cs.api) {
+                  console.log('Iubenda API initialized. Applying preferences.');
+                  clearInterval(interval); // Ferma il controllo
+                  if (consent === 'true') {
+                      console.log('Consent given. Banner should be hidden.');
+                      window._iub.cs.api.consentApplied();
+                  } else if (consent === 'false') {
+                      console.log('Consent rejected. Adjusting preferences accordingly.');
+                  }
               }
-          } else {
-              console.log('Iubenda API not initialized yet.');
-          }
+          }, 200); // Controlla ogni 200ms
       }
   
       // Assicurati che le preferenze vengano applicate al caricamento del DOM
@@ -761,3 +764,4 @@
     <script src="js/pdfViewerBitacora.js"></script>
   </body>
 </html>
+
