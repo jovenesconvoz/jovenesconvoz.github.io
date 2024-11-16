@@ -46,75 +46,115 @@
 
     <!-- Cookie consent and GDPR compliance scripts -->
 
+    <!-- Cookie Consent Code -->
     <script type="text/javascript">
       var _iub = _iub || [];
       _iub.csConfiguration = {
-          "askConsentAtCookiePolicyUpdate": true,
-          "enableFadp": true,
-          "enableLgpd": true,
-          "enableUspr": true,
-          "fadpApplies": true,
-          "floatingPreferencesButtonDisplay": "bottom-right",
-          "floatingPreferencesButtonIcon": false,
-          "lang": "es",
-          "perPurposeConsent": true,
-          "siteId": 3592554,
-          "usprApplies": true,
-          "cookiePolicyId": 81824246,
-          "floatingPreferencesButtonCaption": true,
-          "callback": {
-              "onConsentFirstGiven": function(action) {
-                  console.log('First consent given via:', action);
-                  localStorage.setItem('userConsent', 'true');
-                  applyUserPreferences();
-              },
-              "onConsentFirstRejected": function() {
-                  console.log('First consent rejected.');
-                  localStorage.removeItem('userConsent');
-              },
-              "onConsentGiven": function() {
-                  console.log('Consent given.');
-                  localStorage.setItem('userConsent', 'true');
-                  applyUserPreferences();
-              },
-              "onConsentRejected": function() {
-                  console.log('Consent rejected.');
-                  localStorage.removeItem('userConsent');
-              },
-              "onReady": function() {
-                  var consent = localStorage.getItem('userConsent');
-                  if (consent) {
-                      console.log('Consent already given, initializing with user preferences.');
-                      applyUserPreferences();
-                  }
-              }
+        askConsentAtCookiePolicyUpdate: true,
+        enableFadp: true,
+        enableLgpd: true,
+        enableUspr: true,
+        fadpApplies: true,
+        floatingPreferencesButtonDisplay: "bottom-right",
+        floatingPreferencesButtonIcon: false,
+        lang: "es",
+        perPurposeConsent: true,
+        siteId: 3592554,
+        usprApplies: true,
+        cookiePolicyId: 81824246,
+        floatingPreferencesButtonCaption: true,
+        whitelabel: false,
+        callback: {
+          onConsentFirstGiven: function (action) {
+            console.log("First consent given via:", action);
+            localStorage.setItem("userConsent", "true");
+            localStorage.setItem("consentTimestamp", new Date().getTime());
+            applyUserPreferences();
           },
-          "banner": {
-              "acceptButtonDisplay": true,
-              "closeButtonDisplay": false,
-              "customizeButtonDisplay": true,
-              "explicitWithdrawal": true,
-              "listPurposes": true,
-              "logo": null,
-              "ownerName": "jovenesconvoz.github.io/",
-              "position": "bottom",
-              "rejectButtonDisplay": true,
-              "showPurposesToggles": true,
-              "showTitle": false,
-              "showTotalNumberOfProviders": true
-          }
+          onConsentFirstRejected: function () {
+            console.log("First consent rejected.");
+            localStorage.setItem("userConsent", "false");
+            localStorage.setItem("consentTimestamp", new Date().getTime());
+          },
+          onConsentGiven: function () {
+            console.log("Consent given.");
+            localStorage.setItem("userConsent", "true");
+            localStorage.setItem("consentTimestamp", new Date().getTime());
+            applyUserPreferences();
+          },
+          onConsentRejected: function () {
+            console.log("Consent rejected.");
+            localStorage.setItem("userConsent", "false");
+            localStorage.setItem("consentTimestamp", new Date().getTime());
+          },
+          onReady: function () {
+            var consent = localStorage.getItem("userConsent");
+            var timestamp = localStorage.getItem("consentTimestamp");
+            var currentTime = new Date().getTime();
+            var thirtyDays = 30 * 24 * 60 * 60 * 1000; // 30 days in milliseconds
+
+            // Only show banner if no consent is stored or if 30 days have passed
+            if (
+              !consent ||
+              !timestamp ||
+              currentTime - parseInt(timestamp) > thirtyDays
+            ) {
+              // Reset consent after 30 days
+              localStorage.removeItem("userConsent");
+              localStorage.removeItem("consentTimestamp");
+            } else {
+              // Hide banner if valid consent exists
+              if (window._iub && window._iub.cs) {
+                window._iub.cs.api.hideWidget();
+              }
+
+              if (consent === "true") {
+                applyUserPreferences();
+              }
+            }
+          },
+        },
+        banner: {
+          acceptButtonDisplay: true,
+          closeButtonDisplay: false,
+          customizeButtonDisplay: true,
+          explicitWithdrawal: true,
+          listPurposes: true,
+          logo: null,
+          ownerName: "jovenesconvoz.github.io/",
+          position: "bottom",
+          rejectButtonDisplay: true,
+          showPurposesToggles: true,
+          showTitle: false,
+          showTotalNumberOfProviders: true,
+        },
       };
-      
-      // Esegui solo se non è stato dato il consenso
-      if (!localStorage.getItem('userConsent')) {
-          window.addEventListener("load", function() {
-              iubenda_cs.run();  // Avvia Iubenda solo se non c'è il consenso
-          });
+    </script>
+
+    <!-- User Preferences Function -->
+    <script type="text/javascript">
+      function applyUserPreferences() {
+        // Add your code here to apply user preferences
+        // This function will be called when consent is given
+        console.log("Applying user preferences...");
       }
-      </script>
-      
-      <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-      <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+    </script>
+
+    <!-- Required Iubenda Scripts -->
+    <script
+      type="text/javascript"
+      src="https://cs.iubenda.com/autoblocking/3592554.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//cdn.iubenda.com/cs/gpp/stub.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//cdn.iubenda.com/cs/iubenda_cs.js"
+      charset="UTF-8"
+      async
+    ></script>
   </head>
 
   <body>
