@@ -48,101 +48,92 @@
     <script type="text/javascript">
       var _iub = _iub || [];
       _iub.csConfiguration = {
-        askConsentAtCookiePolicyUpdate: true,
-        enableFadp: true,
-        enableLgpd: true,
-        enableUspr: true,
-        fadpApplies: true,
-        floatingPreferencesButtonDisplay: "bottom-right",
-        floatingPreferencesButtonIcon: false,
-        lang: "es",
-        perPurposeConsent: true,
-        siteId: 3592554,
-        usprApplies: true,
-        cookiePolicyId: 81824246,
-        floatingPreferencesButtonCaption: true,
-        callback: {
-          onConsentFirstGiven: function (action) {
-            console.log("First consent given via:", action);
-            localStorage.setItem("userConsent", "true");
-            hideIubendaWidget();
+          "askConsentAtCookiePolicyUpdate": true,
+          "enableFadp": true,
+          "enableLgpd": true,
+          "enableUspr": true,
+          "fadpApplies": true,
+          "floatingPreferencesButtonDisplay": "bottom-right",
+          "floatingPreferencesButtonIcon": false,
+          "lang": "es",
+          "perPurposeConsent": true,
+          "siteId": 3592554,
+          "usprApplies": true,
+          "cookiePolicyId": 81824246,
+          "floatingPreferencesButtonCaption": true,
+          "callback": {
+              "onConsentFirstGiven": function(action) {
+                  console.log('First consent given via:', action);
+                  localStorage.setItem('userConsent', 'true');
+                  applyUserPreferences();
+              },
+              "onConsentFirstRejected": function() {
+                  console.log('First consent rejected.');
+                  localStorage.setItem('userConsent', 'false');
+                  applyUserPreferences();
+              },
+              "onConsentGiven": function() {
+                  console.log('Consent given.');
+                  localStorage.setItem('userConsent', 'true');
+                  applyUserPreferences();
+              },
+              "onConsentRejected": function() {
+                  console.log('Consent rejected.');
+                  localStorage.setItem('userConsent', 'false');
+                  applyUserPreferences();
+              },
+              "onReady": function() {
+                  var consent = localStorage.getItem('userConsent');
+                  console.log('Previous consent found:', consent);
+                  if (consent === 'true' || consent === 'false') {
+                      applyUserPreferences();
+                  }
+              }
           },
-          onConsentFirstRejected: function () {
-            console.log("First consent rejected.");
-            localStorage.setItem("userConsent", "false");
-            hideIubendaWidget();
-          },
-          onConsentGiven: function () {
-            console.log("Consent given.");
-            localStorage.setItem("userConsent", "true");
-            hideIubendaWidget();
-          },
-          onConsentRejected: function () {
-            console.log("Consent rejected.");
-            localStorage.setItem("userConsent", "false");
-            hideIubendaWidget();
-          },
-          onReady: function () {
-            var consent = localStorage.getItem("userConsent");
-            console.log("Previous consent found:", consent);
-            if (consent === "true" || consent === "false") {
-              hideIubendaWidget();
-            }
-          },
-        },
-        banner: {
-          acceptButtonDisplay: true,
-          closeButtonDisplay: false,
-          customizeButtonDisplay: true,
-          explicitWithdrawal: true,
-          listPurposes: true,
-          logo: null,
-          ownerName: "jovenesconvoz.github.io/",
-          position: "bottom",
-          rejectButtonDisplay: true,
-          showPurposesToggles: true,
-          showTitle: false,
-          showTotalNumberOfProviders: true,
-        },
+          "banner": {
+              "acceptButtonDisplay": true,
+              "closeButtonDisplay": false,
+              "customizeButtonDisplay": true,
+              "explicitWithdrawal": true,
+              "listPurposes": true,
+              "logo": null,
+              "ownerName": "jovenesconvoz.github.io/",
+              "position": "bottom",
+              "rejectButtonDisplay": true,
+              "showPurposesToggles": true,
+              "showTitle": false,
+              "showTotalNumberOfProviders": true
+          }
       };
-
-      // Funzione per nascondere il widget Iubenda
-      function hideIubendaWidget() {
-        if (window._iub && window._iub.cs && window._iub.cs.api) {
-          setTimeout(() => {
-            console.log("Hiding Iubenda widget...");
-            window._iub.cs.api.hideWidget();
-          }, 500); // Ritardo per assicurare che il widget sia completamente caricato
-        } else {
-          console.log("Iubenda widget not ready yet.");
-        }
+  
+      // Funzione per applicare le preferenze dell'utente e gestire il banner
+      function applyUserPreferences() {
+          var consent = localStorage.getItem('userConsent');
+          console.log('Applying user preferences:', consent);
+          if (window._iub && window._iub.cs && window._iub.cs.api) {
+              if (consent === 'true') {
+                  console.log('Consent given. Banner should be hidden.');
+                  window._iub.cs.api.consentApplied();
+              } else if (consent === 'false') {
+                  console.log('Consent rejected. Adjusting preferences accordingly.');
+                  // Qui puoi aggiungere eventuali altre azioni se necessario
+              }
+          } else {
+              console.log('Iubenda API not initialized yet.');
+          }
       }
-
-      // Assicurati che il widget venga nascosto quando il DOM è pronto
-      document.addEventListener("DOMContentLoaded", function () {
-        console.log("Checking consent on DOMContentLoaded...");
-        var consent = localStorage.getItem("userConsent");
-        if (consent === "true") {
-          hideIubendaWidget();
-        }
+  
+      // Assicurati che le preferenze vengano applicate al caricamento del DOM
+      document.addEventListener('DOMContentLoaded', function() {
+          console.log('Checking and applying preferences on DOMContentLoaded...');
+          applyUserPreferences();
       });
-    </script>
-
-    <!-- Script di Iubenda -->
-    <script
-      type="text/javascript"
-      src="https://cs.iubenda.com/autoblocking/3592554.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//cdn.iubenda.com/cs/gpp/stub.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//cdn.iubenda.com/cs/iubenda_cs.js"
-      charset="UTF-8"
-      async
-    ></script>
+  </script>
+  
+  <!-- Script di Iubenda -->
+  <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
+  <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+  <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
   </head>
 
   <body>
