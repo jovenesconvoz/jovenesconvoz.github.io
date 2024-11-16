@@ -45,8 +45,6 @@
     </title>
 
     <!-- Cookie consent and GDPR compliance scripts -->
-
-    <!-- Cookie Consent Code -->
     <script type="text/javascript">
       var _iub = _iub || [];
       _iub.csConfiguration = {
@@ -63,53 +61,41 @@
         usprApplies: true,
         cookiePolicyId: 81824246,
         floatingPreferencesButtonCaption: true,
-        whitelabel: false,
         callback: {
           onConsentFirstGiven: function (action) {
             console.log("First consent given via:", action);
             localStorage.setItem("userConsent", "true");
-            localStorage.setItem("consentTimestamp", new Date().getTime());
-            applyUserPreferences();
+            if (window._iub && window._iub.cs) {
+              window._iub.cs.api.hideWidget();
+            }
           },
           onConsentFirstRejected: function () {
             console.log("First consent rejected.");
             localStorage.setItem("userConsent", "false");
-            localStorage.setItem("consentTimestamp", new Date().getTime());
+            if (window._iub && window._iub.cs) {
+              window._iub.cs.api.hideWidget();
+            }
           },
           onConsentGiven: function () {
             console.log("Consent given.");
             localStorage.setItem("userConsent", "true");
-            localStorage.setItem("consentTimestamp", new Date().getTime());
-            applyUserPreferences();
+            if (window._iub && window._iub.cs) {
+              window._iub.cs.api.hideWidget();
+            }
           },
           onConsentRejected: function () {
             console.log("Consent rejected.");
             localStorage.setItem("userConsent", "false");
-            localStorage.setItem("consentTimestamp", new Date().getTime());
+            if (window._iub && window._iub.cs) {
+              window._iub.cs.api.hideWidget();
+            }
           },
           onReady: function () {
             var consent = localStorage.getItem("userConsent");
-            var timestamp = localStorage.getItem("consentTimestamp");
-            var currentTime = new Date().getTime();
-            var thirtyDays = 30 * 24 * 60 * 60 * 1000; // 30 days in milliseconds
-
-            // Only show banner if no consent is stored or if 30 days have passed
-            if (
-              !consent ||
-              !timestamp ||
-              currentTime - parseInt(timestamp) > thirtyDays
-            ) {
-              // Reset consent after 30 days
-              localStorage.removeItem("userConsent");
-              localStorage.removeItem("consentTimestamp");
-            } else {
-              // Hide banner if valid consent exists
+            if (consent !== null) {
+              console.log("Previous consent found:", consent);
               if (window._iub && window._iub.cs) {
                 window._iub.cs.api.hideWidget();
-              }
-
-              if (consent === "true") {
-                applyUserPreferences();
               }
             }
           },
@@ -130,17 +116,6 @@
         },
       };
     </script>
-
-    <!-- User Preferences Function -->
-    <script type="text/javascript">
-      function applyUserPreferences() {
-        // Add your code here to apply user preferences
-        // This function will be called when consent is given
-        console.log("Applying user preferences...");
-      }
-    </script>
-
-    <!-- Required Iubenda Scripts -->
     <script
       type="text/javascript"
       src="https://cs.iubenda.com/autoblocking/3592554.js"
