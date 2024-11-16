@@ -65,28 +65,28 @@
               "onConsentFirstGiven": function(action) {
                   console.log('First consent given via:', action);
                   localStorage.setItem('userConsent', 'true');
-                  applyUserPreferences();
+                  handleConsentChange('true');
               },
               "onConsentFirstRejected": function() {
                   console.log('First consent rejected.');
                   localStorage.setItem('userConsent', 'false');
-                  applyUserPreferences();
+                  handleConsentChange('false');
               },
               "onConsentGiven": function() {
                   console.log('Consent given.');
                   localStorage.setItem('userConsent', 'true');
-                  applyUserPreferences();
+                  handleConsentChange('true');
               },
               "onConsentRejected": function() {
                   console.log('Consent rejected.');
                   localStorage.setItem('userConsent', 'false');
-                  applyUserPreferences();
+                  handleConsentChange('false');
               },
               "onReady": function() {
                   var consent = localStorage.getItem('userConsent');
                   console.log('Previous consent found:', consent);
                   if (consent === 'true' || consent === 'false') {
-                      applyUserPreferences();
+                      handleConsentChange(consent);
                   }
               }
           },
@@ -106,31 +106,20 @@
           }
       };
   
-      // Funzione per applicare le preferenze dell'utente e gestire il banner
-      function applyUserPreferences() {
-          var consent = localStorage.getItem('userConsent');
-          console.log('Applying user preferences:', consent);
-  
-          // Aspetta che l'API Iubenda sia pronta
-          var interval = setInterval(function() {
-              if (window._iub && window._iub.cs && window._iub.cs.api) {
-                  console.log('Iubenda API initialized. Applying preferences.');
-                  clearInterval(interval); // Ferma il controllo
-                  if (consent === 'true') {
-                      console.log('Consent given. Banner should be hidden.');
-                      window._iub.cs.api.consentApplied();
-                  } else if (consent === 'false') {
-                      console.log('Consent rejected. Adjusting preferences accordingly.');
-                  }
+      // Funzione per gestire il cambio di consenso
+      function handleConsentChange(consent) {
+          console.log('Handling consent change:', consent);
+          if (window._iub && window._iub.cs && window._iub.cs.api) {
+              if (consent === 'true') {
+                  console.log('Consent given. Preferences applied.');
+                  // Le preferenze vengono salvate automaticamente da Iubenda.
+              } else if (consent === 'false') {
+                  console.log('Consent rejected. Preferences adjusted.');
               }
-          }, 200); // Controlla ogni 200ms
+          } else {
+              console.log('Iubenda API not initialized yet.');
+          }
       }
-  
-      // Assicurati che le preferenze vengano applicate al caricamento del DOM
-      document.addEventListener('DOMContentLoaded', function() {
-          console.log('Checking and applying preferences on DOMContentLoaded...');
-          applyUserPreferences();
-      });
   </script>
   
   <!-- Script di Iubenda -->
@@ -764,4 +753,3 @@
     <script src="js/pdfViewerBitacora.js"></script>
   </body>
 </html>
-
