@@ -65,38 +65,28 @@
           onConsentFirstGiven: function (action) {
             console.log("First consent given via:", action);
             localStorage.setItem("userConsent", "true");
-            if (window._iub && window._iub.cs) {
-              window._iub.cs.api.hideWidget();
-            }
+            hideIubendaWidget();
           },
           onConsentFirstRejected: function () {
             console.log("First consent rejected.");
             localStorage.setItem("userConsent", "false");
-            if (window._iub && window._iub.cs) {
-              window._iub.cs.api.hideWidget();
-            }
+            hideIubendaWidget();
           },
           onConsentGiven: function () {
             console.log("Consent given.");
             localStorage.setItem("userConsent", "true");
-            if (window._iub && window._iub.cs) {
-              window._iub.cs.api.hideWidget();
-            }
+            hideIubendaWidget();
           },
           onConsentRejected: function () {
             console.log("Consent rejected.");
             localStorage.setItem("userConsent", "false");
-            if (window._iub && window._iub.cs) {
-              window._iub.cs.api.hideWidget();
-            }
+            hideIubendaWidget();
           },
           onReady: function () {
             var consent = localStorage.getItem("userConsent");
-            if (consent !== null) {
-              console.log("Previous consent found:", consent);
-              if (window._iub && window._iub.cs) {
-                window._iub.cs.api.hideWidget();
-              }
+            console.log("Previous consent found:", consent);
+            if (consent === "true" || consent === "false") {
+              hideIubendaWidget();
             }
           },
         },
@@ -115,7 +105,30 @@
           showTotalNumberOfProviders: true,
         },
       };
+
+      // Funzione per nascondere il widget Iubenda
+      function hideIubendaWidget() {
+        if (window._iub && window._iub.cs && window._iub.cs.api) {
+          setTimeout(() => {
+            console.log("Hiding Iubenda widget...");
+            window._iub.cs.api.hideWidget();
+          }, 500); // Ritardo per assicurare che il widget sia completamente caricato
+        } else {
+          console.log("Iubenda widget not ready yet.");
+        }
+      }
+
+      // Assicurati che il widget venga nascosto quando il DOM è pronto
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("Checking consent on DOMContentLoaded...");
+        var consent = localStorage.getItem("userConsent");
+        if (consent === "true") {
+          hideIubendaWidget();
+        }
+      });
     </script>
+
+    <!-- Script di Iubenda -->
     <script
       type="text/javascript"
       src="https://cs.iubenda.com/autoblocking/3592554.js"
