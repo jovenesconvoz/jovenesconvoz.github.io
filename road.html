@@ -28,42 +28,96 @@
 
     <!-- Page Title -->
     <title>Jovenes Con Voz | Fomentando la Participación Juvenil en Europa</title>
-
     <!-- Cookie consent and GDPR compliance scripts -->
+    <script type="text/javascript">
+        var _iub = _iub || [];
+        _iub.csConfiguration = {
+            "askConsentAtCookiePolicyUpdate": true,
+            "enableFadp": true,
+            "enableLgpd": true,
+            "enableUspr": true,
+            "fadpApplies": true,
+            "floatingPreferencesButtonDisplay": "bottom-right",
+            "floatingPreferencesButtonIcon": false,
+            "lang": "es",
+            "perPurposeConsent": true,
+            "siteId": 3592554,
+            "usprApplies": true,
+            "cookiePolicyId": 81824246,
+            "floatingPreferencesButtonCaption": true,
+            // Aggiungiamo il parametro localConsentDomain
+            "localConsentDomain": "jovenesconvoz.github.io",
+            "callback": {
+                "onConsentFirstGiven": function (action) {
+                    console.log('Primo consenso dato tramite:', action);
+                    localStorage.setItem('userConsent', 'true');
+                    applyUserPreferences();
+                },
+                "onConsentFirstRejected": function () {
+                    console.log('Primo consenso rifiutato.');
+                    localStorage.setItem('userConsent', 'false');
+                },
+                "onConsentGiven": function () {
+                    console.log('Consenso dato.');
+                    localStorage.setItem('userConsent', 'true');
+                    applyUserPreferences();
+                },
+                "onConsentRejected": function () {
+                    console.log('Consenso rifiutato.');
+                    localStorage.setItem('userConsent', 'false');
+                },
+                "onReady": function () {
+                    var consent = localStorage.getItem('userConsent');
+                    function hideBanner() {
+                        if (_iub && _iub.cs && _iub.cs.api) {
+                            if (consent === 'true') {
+                                _iub.cs.api.consent_given();
+                            } else if (consent === 'false') {
+                                _iub.cs.api.consent_rejected();
+                            }
+                        } else {
+                            setTimeout(hideBanner, 100);
+                        }
+                    }
+                    if (consent === 'true') {
+                        console.log('Consenso già dato, applico le preferenze utente.');
+                        applyUserPreferences();
+                        hideBanner();
+                    } else if (consent === 'false') {
+                        console.log('Consenso già rifiutato.');
+                        hideBanner();
+                    } else {
+                        console.log('Nessun consenso ancora dato.');
+                        // Il banner apparirà perché il consenso non è stato ancora dato o rifiutato
+                    }
+                }
+            },
+            "banner": {
+                "acceptButtonDisplay": true,
+                "closeButtonDisplay": false,
+                "customizeButtonDisplay": true,
+                "explicitWithdrawal": true,
+                "listPurposes": true,
+                "logo": null,
+                "ownerName": "jovenesconvoz.github.io/",
+                "position": "bottom",
+                "rejectButtonDisplay": true,
+                "showPurposesToggles": true,
+                "showTitle": false,
+                "showTotalNumberOfProviders": true
+            }
+        };
 
-   <script type="text/javascript">
-var _iub = _iub || [];
-_iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"enableFadp":true,"enableLgpd":true,"enableUspr":true,"fadpApplies":true,"floatingPreferencesButtonDisplay":"bottom-right","floatingPreferencesButtonIcon":false,"lang":"es","perPurposeConsent":true,"siteId":3592554,"usprApplies":true,"cookiePolicyId":81824246,"floatingPreferencesButtonCaption":true,"callback":{"onConsentFirstGiven": function(action) {
-    console.log('First consent given via:', action);
-    localStorage.setItem('userConsent', 'true');
-    applyUserPreferences();
-},"onConsentFirstRejected": function() {
-    console.log('First consent rejected.');
-    localStorage.removeItem('userConsent');
-},"onConsentGiven": function() {
-    console.log('Consent given.');
-    localStorage.setItem('userConsent', 'true');
-    applyUserPreferences();
-},"onConsentRejected": function() {
-    console.log('Consent rejected.');
-    localStorage.removeItem('userConsent');
-},"onReady": function() {
-    var consent = localStorage.getItem('userConsent');
-    if (consent) {
-        console.log('Consent already given, initializing with user preferences.');
-        applyUserPreferences();
-    } else {
-        if (consentGiven) {
-            console.log('Consent is given for the first time or on current visit.');
-            localStorage.setItem('userConsent', 'true');
-            applyUserPreferences();
+        // Funzione per applicare le preferenze utente
+        function applyUserPreferences() {
+            // Inserisci qui il codice per attivare le funzionalità che richiedono il consenso
+            console.log('Preferenze utente applicate.');
         }
-    }
-}},"banner":{"acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"logo":null,"ownerName":"jovenesconvoz.github.io/","position":"bottom","rejectButtonDisplay":true,"showPurposesToggles":true,"showTitle":false,"showTotalNumberOfProviders":true}};
-</script>
-<script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+    </script>
+    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3592554.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+
 </head>
 
 <body>
@@ -280,11 +334,23 @@ _iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"enableFadp":true,
                         </li>
                     </ul>
                     <p>
-                       <a href="https://www.iubenda.com/privacy-policy/81824246" class="iubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe " title="Política de Privacidad ">Política de Privacidad</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+                        <a href="https://www.iubenda.com/privacy-policy/81824246"
+                            class="iubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe "
+                            title="Política de Privacidad ">Política de Privacidad</a>
+                        <script
+                            type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>
 
-<a href="https://www.iubenda.com/privacy-policy/81824246/cookie-policy" class="iubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe " title="Política de Cookies ">Política de Cookies</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+                        <a href="https://www.iubenda.com/privacy-policy/81824246/cookie-policy"
+                            class="iubenda-nostyle iubenda-noiframe iubenda-embed iubenda-noiframe "
+                            title="Política de Cookies ">Política de Cookies</a>
+                        <script
+                            type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>
 
-<a href="https://www.iubenda.com/condiciones-de-uso/81824246" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Términos y Condiciones ">Términos y Condiciones</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+                        <a href="https://www.iubenda.com/condiciones-de-uso/81824246"
+                            class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe "
+                            title="Términos y Condiciones ">Términos y Condiciones</a>
+                        <script
+                            type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>
                     </p>
                 </div>
             </div>
